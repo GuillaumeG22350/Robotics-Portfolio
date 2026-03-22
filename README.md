@@ -1,1 +1,7 @@
 # Robotics-Portfolio
+To the Engineering Team,
+I am a Mechatronics Engineer from INSA Rennes (France) with a specialization in autonomous aerial systems. I am seeking a 6 to 12-month engineering position in the Washington, D.C. area starting in September 2026. To facilitate a smooth integration, I have already secured housing in D.C. (16th St NW) and will be available for an immediate start without requiring relocation assistance.
+Visa & Administrative Status: As a recent graduate (August 2026), I am fully eligible for the J-1 Intern Visa. This program is designed to be straightforward for U.S. employers; a designated third-party sponsor handles the legal paperwork and sponsorship, requiring minimal administrative involvement from your organization.
+Technical Expertise: My background focuses on bridging the gap between mechanical design and autonomous control. In my current work at the French Defense Procurement Agency (DGA), I develop UAV control laws specifically Leader-Follower and Gs'ruff architectures using ROS2, PX4, and YOLO-based vision systems. Additionally, I manage the full manufacturing cycle for modular drone projects, from initial CAD design (CATIA/SolidWorks) to hardware integration and assembly.
+This portfolio provides a visual overview of my recent technical achievements. I look forward to the possibility of discussing how my skills in control systems and mechatronics can support your team’s objectives.
+Guillaume Guguen 
