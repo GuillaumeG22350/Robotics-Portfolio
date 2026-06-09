@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guillaume Guguen — Mechatronics Engineer</title>
+<meta name="description" content="Mechatronics engineer — mechanical design, electronics, control and software. Robotics roles, graduating August 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+  (function(){try{var d=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-theme', d?'dark':'light');}catch(e){}})();
+</script>
+<style>
+  :root{
+    --bg:#10151A; --surface:#161E25; --text:#E9EEF2; --muted:#8C99A5;
+    --faint:#5C6975; --line:rgba(233,238,242,.11); --accent:#F2873E; --on-accent:#10151A;
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --body:"Inter",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --maxw:1000px; --gut:clamp(22px,5vw,56px);
+  }
+  :root[data-theme="light"]{
+    --bg:#F5F6F7; --surface:#FFFFFF; --text:#141A20; --muted:#5C6873;
+    --faint:#94A0AA; --line:rgba(20,26,32,.12); --accent:#D9691A; --on-accent:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--body);font-size:17px;line-height:1.7;
+    -webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+  a{color:inherit;text-decoration:none}
+  img,video{max-width:100%;display:block;border-radius:8px}
+  ::selection{background:var(--accent);color:var(--on-accent)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.1;margin:0}
+  h1{font-size:clamp(2.1rem,5.2vw,3.4rem);letter-spacing:-.02em}
+  h2{font-size:clamp(1.6rem,3.2vw,2.2rem);letter-spacing:-.01em}
+  p{margin:0 0 1rem}
+  .lead{font-size:clamp(1.02rem,1.5vw,1.18rem);color:var(--muted);max-width:58ch}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--accent)}
+
+  header.nav{position:sticky;top:0;z-index:50;
+    background:color-mix(in srgb,var(--bg) 82%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;gap:1.2rem;height:62px;
+    max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+  .brand{font-family:var(--display);font-weight:700;font-size:1.02rem;margin-right:auto}
+  .brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:1.7rem;font-family:var(--mono);font-size:12.5px;
+    letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+  .nav-links a:hover{color:var(--text)}
+  .ctrl{display:flex;align-items:center;gap:.5rem}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:7px;overflow:hidden}
+  .seg button{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;
+    padding:.4em .6em;background:none;border:none;color:var(--muted);cursor:pointer;transition:.2s}
+  .seg button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+  .iconbtn{width:32px;height:32px;border:1px solid var(--line);border-radius:7px;
+    background:none;color:var(--text);cursor:pointer;font-size:14px;
+    display:flex;align-items:center;justify-content:center;transition:.2s}
+  .iconbtn:hover{border-color:var(--faint)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  .hero{padding:clamp(52px,9vw,96px) 0 clamp(44px,6vw,72px)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,64px);align-items:center}
+  .hero h1{margin:.9rem 0 1.3rem}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.9rem}
+  .btn{font-family:var(--mono);font-size:13px;letter-spacing:.02em;padding:.7em 1.15em;
+    border-radius:8px;border:1px solid var(--line);color:var(--text);transition:.2s}
+  .btn:hover{border-color:var(--faint);transform:translateY(-1px)}
+  .btn.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:500}
+  .meta{display:flex;flex-wrap:wrap;gap:1.3rem;margin-top:1.9rem;
+    font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.02em}
+  .meta b{color:var(--text);font-weight:500}
+
+  .scope{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .scope .cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+    color:var(--faint);margin-bottom:6px;display:block}
+  .scope svg{width:100%;height:auto}
+  .lp-node{fill:none;stroke:var(--line);stroke-width:1.5}
+  .lp-node.acc{stroke:var(--accent)}
+  .lp-txt{font-family:var(--mono);font-size:12px;fill:var(--text);text-anchor:middle}
+  .lp-arrow{stroke:var(--accent);stroke-width:1.6;fill:none}
+  .lp-center{font-family:var(--mono);font-size:10px;fill:var(--faint);text-anchor:middle;letter-spacing:.1em}
+
+  section{padding:clamp(60px,9vw,100px) 0;border-top:1px solid var(--line)}
+  .sec-head{margin-bottom:clamp(36px,5vw,56px)}
+  .sec-head h2{margin:.7rem 0 0}
+
+  .caps{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,3vw,26px)}
+  .cap-card{border:1px solid var(--line);border-radius:11px;padding:24px;background:var(--surface)}
+  .cap-card .k{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:.06em}
+  .cap-card h3{font-size:1.15rem;margin:.7rem 0 .5rem}
+  .cap-card p{font-size:.95rem;color:var(--muted);margin:0}
+
+  .proj{padding-block:clamp(44px,7vw,72px)}
+  .proj+.proj{border-top:1px solid var(--line)}
+  .proj-tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted)}
+  .proj h3{font-size:clamp(1.45rem,2.8vw,2rem);margin:.5rem 0 1rem}
+  .proj p{color:var(--text);max-width:66ch}
+  .stats{font-family:var(--mono);font-size:12.5px;color:var(--muted);
+    letter-spacing:.01em;margin:1.3rem 0;line-height:2}
+
+  .skills{margin:1.3rem 0}
+  .skills .lab{font-family:var(--mono);font-size:11px;color:var(--faint);
+    letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.6rem}
+  .skills .tags{display:flex;flex-wrap:wrap;gap:.5rem}
+  .skills .tags span{font-family:var(--mono);font-size:11.5px;color:var(--text);
+    border:1px solid var(--line);border-radius:6px;padding:.32em .65em}
+
+  .media-slot{border:1px solid var(--line);border-radius:10px;padding:24px;
+    margin:1.3rem 0;text-align:center;background:var(--surface)}
+  .media-slot .icon{font-size:1.35rem;opacity:.85}
+  .media-slot .title{font-family:var(--display);font-weight:600;color:var(--text);
+    margin:.45rem 0 .25rem;font-size:1.02rem}
+  .media-slot code{font-family:var(--mono);font-size:11.5px;color:var(--accent);
+    background:var(--bg);border:1px solid var(--line);border-radius:6px;
+    padding:.4em .65em;display:inline-block;white-space:pre-wrap;word-break:break-word;margin-top:.5rem}
+  .slot-2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+
+  details.code{border:1px solid var(--line);border-radius:9px;background:var(--surface);
+    overflow:hidden;margin:1.3rem 0}
+  details.code summary{cursor:pointer;list-style:none;padding:13px 17px;
+    font-family:var(--mono);font-size:12.5px;color:var(--text);display:flex;align-items:center;gap:.55em}
+  details.code summary::-webkit-details-marker{display:none}
+  details.code summary::before{content:"+";color:var(--accent);font-weight:600}
+  details.code[open] summary::before{content:"–"}
+  details.code pre{margin:0;padding:0 17px 16px;overflow-x:auto}
+  details.code code{font-family:var(--mono);font-size:12.5px;line-height:1.75;color:var(--text)}
+  .cmt{color:var(--faint)} .kw{color:var(--accent)}
+
+  .about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,5vw,56px)}
+  .xp{list-style:none;margin:0;padding:0}
+  .xp li{padding:18px 0;border-top:1px solid var(--line)}
+  .xp li:first-child{border-top:none;padding-top:0}
+  .xp .org{font-family:var(--display);font-weight:600;font-size:1.08rem}
+  .xp .role{font-family:var(--mono);font-size:11.5px;color:var(--muted);
+    display:block;margin:.25rem 0 .5rem}
+  .xp p{font-size:.93rem;color:var(--muted);margin:0}
+  .facts{border:1px solid var(--line);border-radius:11px;padding:24px;background:var(--surface)}
+  .facts dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.7rem 1.1rem;font-size:.93rem}
+  .facts dt{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.03em}
+  .facts dd{margin:0}
+
+  .stack{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,32px)}
+  .grp .k{font-family:var(--mono);font-size:11.5px;color:var(--accent);
+    letter-spacing:.06em;display:block;margin-bottom:.9rem}
+  .grp ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.5rem}
+  .grp li{font-size:.94rem;color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);padding:clamp(60px,9vw,96px) 0 48px;text-align:center}
+  footer h2{margin:1rem 0}
+  footer .lead{margin:0 auto 2rem}
+  .foot-meta{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:2.4rem}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:820px){
+    .hero-grid,.about-grid{grid-template-columns:1fr}
+    .stack{grid-template-columns:1fr 1fr}
+    .slot-2{grid-template-columns:1fr}
+    .nav-links{display:none}
+  }
+  @media(max-width:500px){.caps,.stack{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top">G.<span>GUGUEN</span></a>
+    <nav class="nav-links">
+      <a href="#skills" data-en="Skills" data-fr="Compétences">Skills</a>
+      <a href="#projects" data-en="Projects" data-fr="Projets">Projects</a>
+      <a href="#about" data-en="About" data-fr="Parcours">About</a>
+      <a href="#contact" data-en="Contact" data-fr="Contact">Contact</a>
+    </nav>
+    <div class="ctrl">
+      <div class="seg" role="group" aria-label="Language">
+        <button id="langEN" onclick="setLang('en')" aria-pressed="true">EN</button>
+        <button id="langFR" onclick="setLang('fr')" aria-pressed="false">FR</button>
+      </div>
+      <button class="iconbtn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">☾</button>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero" style="border-top:none">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow" data-en="Mechatronics Engineer · Robotics" data-fr="Ingénieur Mécatronique · Robotique">Mechatronics Engineer · Robotics</span>
+      <h1 data-en="Mechatronics engineer — from <em>mechanical design</em> to <em>control software</em>." data-fr="Ingénieur mécatronique — de la <em>conception mécanique</em> au <em>logiciel de commande</em>.">Mechatronics engineer — from <em>mechanical design</em> to <em>control software</em>.</h1>
+      <p class="lead" data-en="INSA Rennes graduate. I work across mechanics, electronics, control and software — the full mechatronics chain — and bring complex systems to life, from a spec to a working prototype. Proven on demanding robotics projects, from industrial automation to autonomous systems." data-fr="Diplômé de l'INSA Rennes. Je travaille à la croisée de la mécanique, de l'électronique, du contrôle-commande et du logiciel — toute la chaîne mécatronique — pour donner vie à des systèmes complexes, du cahier des charges au prototype fonctionnel. Éprouvé sur des projets robotiques exigeants, de l'automatisation industrielle aux systèmes autonomes.">INSA Rennes graduate. I work across mechanics, electronics, control and software — the full mechatronics chain — and bring complex systems to life, from a spec to a working prototype. Proven on demanding robotics projects, from industrial automation to autonomous systems.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects" data-en="View projects" data-fr="Voir les projets">View projects</a>
+        <!-- 👉 Replace # with your real links -->
+        <a class="btn" href="mailto:guillaume.guguen@outlook.fr">Email</a>
+        <a class="btn" href="#">LinkedIn</a>
+        <a class="btn" href="#">CV (PDF)</a>
+      </div>
+      <div class="meta">
+        <span data-en="GRADUATING <b>AUG 2026</b>" data-fr="DIPLÔMÉ <b>AOÛT 2026</b>">GRADUATING <b>AUG 2026</b></span>
+        <span data-en="FRANCE · OPEN TO <b>US</b>" data-fr="FRANCE · OUVERT AUX <b>US</b>">FRANCE · OPEN TO <b>US</b></span>
+        <span data-en="FR native · EN <b>C1</b>" data-fr="FR natif · EN <b>C1</b>">FR native · EN <b>C1</b></span>
+      </div>
+    </div>
+
+    <!-- Signature: the mechatronics feedback loop (discipline-neutral) -->
+    <div class="scope reveal">
+      <span class="cap" data-en="THE MECHATRONICS LOOP" data-fr="LA BOUCLE MÉCATRONIQUE">THE MECHATRONICS LOOP</span>
+      <svg viewBox="0 0 480 340" role="img" aria-label="Closed-loop mechatronics cycle: sense, estimate, control, actuate.">
+        <defs>
+          <marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="var(--accent)"/>
+          </marker>
+        </defs>
+        <!-- nodes -->
+        <rect class="lp-node" x="58" y="58" width="130" height="48" rx="9"/>
+        <rect class="lp-node" x="292" y="58" width="130" height="48" rx="9"/>
+        <rect class="lp-node acc" x="292" y="234" width="130" height="48" rx="9"/>
+        <rect class="lp-node" x="58" y="234" width="130" height="48" rx="9"/>
+        <text class="lp-txt" x="123" y="87" data-en="SENSE" data-fr="MESURER">SENSE</text>
+        <text class="lp-txt" x="357" y="87" data-en="ESTIMATE" data-fr="ESTIMER">ESTIMATE</text>
+        <text class="lp-txt" x="357" y="263" data-en="CONTROL" data-fr="COMMANDER">CONTROL</text>
+        <text class="lp-txt" x="123" y="263" data-en="ACTUATE" data-fr="ACTIONNER">ACTUATE</text>
+        <!-- arrows (clockwise loop) -->
+        <line class="lp-arrow" id="lp1" x1="193" y1="82" x2="287" y2="82" marker-end="url(#ah)"/>
+        <line class="lp-arrow" id="lp2" x1="357" y1="111" x2="357" y2="229" marker-end="url(#ah)"/>
+        <line class="lp-arrow" id="lp3" x1="287" y1="258" x2="193" y2="258" marker-end="url(#ah)"/>
+        <line class="lp-arrow" id="lp4" x1="123" y1="229" x2="123" y2="111" marker-end="url(#ah)"/>
+        <text class="lp-center" x="240" y="166" data-en="CLOSED" data-fr="BOUCLE">CLOSED</text>
+        <text class="lp-center" x="240" y="180" data-en="LOOP" data-fr="FERMÉE">LOOP</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS (global, by discipline) ============ -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-en="What I do" data-fr="Mon profil">What I do</span>
+      <h2 data-en="A full-chain engineer." data-fr="Un ingénieur de toute la chaîne.">A full-chain engineer.</h2>
+    </div>
+    <div class="caps">
+      <div class="cap-card reveal">
+        <span class="k" data-en="MECHANICAL · DESIGN" data-fr="MÉCANIQUE · CONCEPTION">MECHANICAL · DESIGN</span>
+        <h3 data-en="Design &amp; modeling" data-fr="Conception &amp; modélisation">Design &amp; modeling</h3>
+        <p data-en="CAD, dynamic modeling, sizing and rapid prototyping — from a spec to a validated part." data-fr="CAO, modélisation dynamique, dimensionnement et prototypage rapide — du cahier des charges à la pièce validée.">CAD, dynamic modeling, sizing and rapid prototyping — from a spec to a validated part.</p>
+      </div>
+      <div class="cap-card reveal">
+        <span class="k" data-en="ELECTRONICS · INTEGRATION" data-fr="ÉLECTRONIQUE · INTÉGRATION">ELECTRONICS · INTEGRATION</span>
+        <h3 data-en="System integration" data-fr="Intégration système">System integration</h3>
+        <p data-en="Component selection, wiring, sensor and actuator integration, and bring-up of embedded systems." data-fr="Choix de composants, câblage, intégration capteurs/actionneurs et mise en service de systèmes embarqués.">Component selection, wiring, sensor and actuator integration, and bring-up of embedded systems.</p>
+      </div>
+      <div class="cap-card reveal">
+        <span class="k" data-en="CONTROL · ESTIMATION" data-fr="CONTRÔLE · ESTIMATION">CONTROL · ESTIMATION</span>
+        <h3 data-en="Control &amp; estimation" data-fr="Contrôle-commande &amp; estimation">Control &amp; estimation</h3>
+        <p data-en="Closed-loop control (PID), state estimation (Kalman filtering) and modeling — validated from simulation to real hardware." data-fr="Asservissement (PID), estimation d'état (filtrage de Kalman) et modélisation — validés de la simulation au matériel réel.">Closed-loop control (PID), state estimation (Kalman filtering) and modeling — validated from simulation to real hardware.</p>
+      </div>
+      <div class="cap-card reveal">
+        <span class="k" data-en="SOFTWARE · ROBOTICS" data-fr="LOGICIEL · ROBOTIQUE">SOFTWARE · ROBOTICS</span>
+        <h3 data-en="Software &amp; robotics" data-fr="Logiciel &amp; robotique">Software &amp; robotics</h3>
+        <p data-en="Programming, real-time middleware, physics simulation and computer vision for autonomous and automated systems." data-fr="Programmation, middleware temps réel, simulation physique et vision par ordinateur pour systèmes autonomes et automatisés.">Programming, real-time middleware, physics simulation and computer vision for autonomous and automated systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-en="Selected work" data-fr="Travaux choisis">Selected work</span>
+      <h2 data-en="Projects" data-fr="Projets">Projects</h2>
+    </div>
+
+    <!-- Neutron IT (full mechatronic build first) -->
+    <article class="proj reveal">
+      <span class="proj-tag" data-en="Neutron IT · Startup contract (Junior Enterprise)" data-fr="Neutron IT · Contrat startup (Junior Entreprise)">Neutron IT · Startup contract (Junior Enterprise)</span>
+      <h3 data-en="Custom UAV — full mechatronic build" data-fr="Drone sur mesure — conception mécatronique complète">Custom UAV — full mechatronic build</h3>
+      <p data-en="A startup contract to design and build a complete system from a blank spec. I ran the entire cycle: requirements analysis and component selection, mechanical design of custom parts in CAD, assembly and wiring, software integration of an onboard computer, autonomous-flight testing, and a delivered user manual. A project that spans every mechatronics discipline, end to end." data-fr="Un contrat pour une startup : concevoir et construire un système complet à partir d'un cahier des charges vierge. J'ai mené tout le cycle : analyse du besoin et choix des composants, conception mécanique de pièces sur mesure en CAO, assemblage et câblage, intégration logicielle d'un ordinateur embarqué, essais en vol autonome et notice d'utilisation livrée. Un projet qui couvre toutes les disciplines de la mécatronique, de bout en bout.">A startup contract to design and build a complete system from a blank spec. I ran the entire cycle: requirements analysis and component selection, mechanical design of custom parts in CAD, assembly and wiring, software integration of an onboard computer, autonomous-flight testing, and a delivered user manual. A project that spans every mechatronics discipline, end to end.</p>
+      <div class="skills">
+        <span class="lab" data-en="Skills" data-fr="Compétences">Skills</span>
+        <div class="tags">
+          <span data-en="Requirements analysis" data-fr="Analyse du besoin">Requirements analysis</span>
+          <span data-en="Mechanical CAD" data-fr="CAO mécanique">Mechanical CAD</span>
+          <span data-en="Component selection" data-fr="Choix de composants">Component selection</span>
+          <span data-en="System integration" data-fr="Intégration système">System integration</span>
+          <span data-en="Project management" data-fr="Gestion de projet">Project management</span>
+        </div>
+      </div>
+      <div class="slot-2">
+        <div class="media-slot">
+          <div class="icon">📷</div>
+          <div class="title" data-en="The drone" data-fr="Le drone">The drone</div>
+          <code>&lt;img src="media/neutron-drone.jpg" alt="Custom UAV"&gt;</code>
+        </div>
+        <div class="media-slot">
+          <div class="icon">📐</div>
+          <div class="title" data-en="CAD design (SolidWorks)" data-fr="Conception CAO (SolidWorks)">CAD design (SolidWorks)</div>
+          <code>&lt;img src="media/neutron-solidworks.jpg" alt="SolidWorks design"&gt;</code>
+        </div>
+      </div>
+      <div class="media-slot">
+        <div class="icon">📹</div>
+        <div class="title" data-en="Autonomous flight" data-fr="Vol autonome">Autonomous flight</div>
+        <code>&lt;video src="media/neutron-flight.mp4" controls&gt;&lt;/video&gt;</code>
+      </div>
+    </article>
+
+    <!-- Interception (NavPro) -->
+    <article class="proj reveal">
+      <span class="proj-tag" data-en="DGA · Guidance, Navigation &amp; Control" data-fr="DGA · Guidage, Navigation &amp; Commande">DGA · Guidance, Navigation &amp; Control</span>
+      <h3 data-en="Vision-based autonomous interception" data-fr="Interception autonome par vision">Vision-based autonomous interception</h3>
+      <p data-en="A complete guidance, navigation and control system that detects, tracks and intercepts a moving target from a single camera. I built the full estimation-and-control chain: a pinhole projection model, an Extended Kalman Filter for 3D state estimation, and proportional-navigation guidance with a terminal maneuver — validated from simulation to flight." data-fr="Un système complet de guidage, navigation et commande qui détecte, suit et intercepte une cible mobile à partir d'une seule caméra. J'ai développé toute la chaîne d'estimation et de commande : modèle de projection pinhole, filtre de Kalman étendu pour l'estimation d'état 3D, et guidage par navigation proportionnelle avec manœuvre terminale — validé de la simulation au vol.">A complete guidance, navigation and control system that detects, tracks and intercepts a moving target from a single camera. I built the full estimation-and-control chain: a pinhole projection model, an Extended Kalman Filter for 3D state estimation, and proportional-navigation guidance with a terminal maneuver — validated from simulation to flight.</p>
+      <p class="stats" data-en="100% on static targets · moving targets ≤ 5 m/s · 20 Hz control loop · Gazebo · PX4 · ROS 2" data-fr="100% sur cibles statiques · cibles mobiles ≤ 5 m/s · boucle de commande 20 Hz · Gazebo · PX4 · ROS 2">100% on static targets · moving targets ≤ 5 m/s · 20 Hz control loop · Gazebo · PX4 · ROS 2</p>
+      <div class="skills">
+        <span class="lab" data-en="Skills" data-fr="Compétences">Skills</span>
+        <div class="tags">
+          <span data-en="State estimation (EKF)" data-fr="Estimation d'état (EKF)">State estimation (EKF)</span>
+          <span data-en="Computer vision" data-fr="Vision par ordinateur">Computer vision</span>
+          <span data-en="Guidance &amp; control laws" data-fr="Lois de guidage &amp; commande">Guidance &amp; control laws</span>
+          <span data-en="ROS 2 / Python" data-fr="ROS 2 / Python">ROS 2 / Python</span>
+          <span data-en="Sim-to-real" data-fr="Simulation→réel">Sim-to-real</span>
+        </div>
+      </div>
+      <div class="slot-2">
+        <div class="media-slot">
+          <div class="icon">📹</div>
+          <div class="title" data-en="Interception run" data-fr="Vol d'interception">Interception run</div>
+          <code>&lt;video src="media/interception-flight.mp4" controls&gt;&lt;/video&gt;</code>
+        </div>
+        <div class="media-slot">
+          <div class="icon">📊</div>
+          <div class="title" data-en="Results" data-fr="Résultats">Results</div>
+          <code>&lt;img src="media/interception-results.png" alt="Interception results"&gt;</code>
+        </div>
+      </div>
+      <details class="code">
+        <summary data-en="Sample code · estimation-to-guidance command (Python)" data-fr="Extrait de code · de l'estimation à la commande (Python)">Sample code · estimation-to-guidance command (Python)</summary>
+<pre><code><span class="cmt"># LOS angle + rate from the EKF state, ego-rotation removed</span>
+los_angle = atan2(X, Z)
+los_rate  = (Vx*Z - X*Vz)/(X**<span class="kw">2</span> + Z**<span class="kw">2</span>) + yaw_rate
+
+<span class="cmt"># Proportional navigation -> bounded lateral velocity setpoint</span>
+Vc    = max(-Vz, forward_speed)
+a_lat = N * Vc * los_rate          <span class="cmt"># N = navigation constant</span>
+Vy    = clip((Vy + a_lat*dt)*<span class="kw">0.998</span>, -<span class="kw">10</span>, <span class="kw">10</span>)</code></pre>
+      </details>
+    </article>
+
+    <!-- Formation flight -->
+    <article class="proj reveal">
+      <span class="proj-tag" data-en="DGA · Multi-agent control" data-fr="DGA · Commande multi-agents">DGA · Multi-agent control</span>
+      <h3 data-en="Collaborative formation flight" data-fr="Vol collaboratif en formation">Collaborative formation flight</h3>
+      <p data-en="Control laws that keep several agents in formation along complex trajectories. I developed and compared two architectures — a rigid-body Leader-Follower with PID, and an artificial-potential-field approach — then identified a formation-rotation issue in turns (not covered in the literature) and solved it with a hybrid switching logic. Validated in simulation, then on real hardware in an OptiTrack motion-capture arena." data-fr="Des lois de commande qui maintiennent plusieurs agents en formation le long de trajectoires complexes. J'ai développé et comparé deux architectures — un Leader-Follower de type solide rigide avec PID, et une approche par potentiels artificiels — puis identifié un problème de rotation de la formation en virage (absent de la littérature) résolu par une logique de commutation hybride. Validé en simulation, puis sur matériel réel dans une arène de capture de mouvement OptiTrack.">Control laws that keep several agents in formation along complex trajectories. I developed and compared two architectures — a rigid-body Leader-Follower with PID, and an artificial-potential-field approach — then identified a formation-rotation issue in turns (not covered in the literature) and solved it with a hybrid switching logic. Validated in simulation, then on real hardware in an OptiTrack motion-capture arena.</p>
+      <p class="stats" data-en="10-agent scale-up (sim) · ~0.45 m tracking error · sim-to-real validated · OptiTrack" data-fr="passage à 10 agents (sim) · erreur de suivi ~0,45 m · validation sim→réel · OptiTrack">10-agent scale-up (sim) · ~0.45 m tracking error · sim-to-real validated · OptiTrack</p>
+      <div class="skills">
+        <span class="lab" data-en="Skills" data-fr="Compétences">Skills</span>
+        <div class="tags">
+          <span data-en="Multi-agent control" data-fr="Commande multi-agents">Multi-agent control</span>
+          <span data-en="PID &amp; feedforward" data-fr="PID &amp; anticipation">PID &amp; feedforward</span>
+          <span data-en="Trajectory generation" data-fr="Génération de trajectoires">Trajectory generation</span>
+          <span data-en="Real-time integration" data-fr="Intégration temps réel">Real-time integration</span>
+          <span data-en="Motion capture (OptiTrack)" data-fr="Capture de mouvement (OptiTrack)">Motion capture (OptiTrack)</span>
+        </div>
+      </div>
+      <div class="slot-2">
+        <div class="media-slot">
+          <div class="icon">📹</div>
+          <div class="title" data-en="Formation flight" data-fr="Vol en formation">Formation flight</div>
+          <code>&lt;video src="media/formation-flight.mp4" controls&gt;&lt;/video&gt;</code>
+        </div>
+        <div class="media-slot">
+          <div class="icon">📹</div>
+          <div class="title" data-en="Real flight · OptiTrack arena" data-fr="Vol réel · arène OptiTrack">Real flight · OptiTrack arena</div>
+          <code>&lt;video src="media/formation-optitrack.mp4" controls&gt;&lt;/video&gt;</code>
+        </div>
+      </div>
+      <div class="media-slot">
+        <div class="icon">📊</div>
+        <div class="title" data-en="Tracking results" data-fr="Résultats de suivi">Tracking results</div>
+        <code>&lt;img src="media/formation-results.png" alt="Formation tracking results"&gt;</code>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-en="Background" data-fr="Parcours">Background</span>
+      <h2 data-en="Path so far" data-fr="Mon parcours">Path so far</h2>
+    </div>
+    <div class="about-grid">
+      <ul class="xp reveal">
+        <li>
+          <span class="org">DGA — Direction Générale de l'Armement</span>
+          <span class="role" data-en="Final-year engineering internship · 6 months · 2026 · Bruz, FR" data-fr="Stage de fin d'études ingénieur · 6 mois · 2026 · Bruz, FR">Final-year engineering internship · 6 months · 2026 · Bruz, FR</span>
+          <p data-en="Estimation, control and multi-agent systems — the interception and formation-flight projects above, from simulation to real hardware." data-fr="Estimation, commande et systèmes multi-agents — les projets d'interception et de vol en formation ci-dessus, de la simulation au matériel réel.">Estimation, control and multi-agent systems — the interception and formation-flight projects above, from simulation to real hardware.</p>
+        </li>
+        <li>
+          <span class="org">EXAIL</span>
+          <span class="role" data-en="Internship · 6 months · 2025 · Lannion, FR" data-fr="Stage · 6 mois · 2025 · Lannion, FR">Internship · 6 months · 2025 · Lannion, FR</span>
+          <p data-en="Automation of a fiber Bragg grating photo-inscription bench: mechanical design in SolidWorks, precision-component selection, and a LabVIEW operator interface." data-fr="Automatisation d'un banc de photo-inscription de réseaux de Bragg : conception mécanique sous SolidWorks, choix de composants de précision et interface opérateur LabVIEW.">Automation of a fiber Bragg grating photo-inscription bench: mechanical design in SolidWorks, precision-component selection, and a LabVIEW operator interface.</p>
+        </li>
+        <li>
+          <span class="org">Stellantis</span>
+          <span class="role" data-en="Internship · 2 months · 2023 · Rennes, FR" data-fr="Stage · 2 mois · 2023 · Rennes, FR">Internship · 2 months · 2023 · Rennes, FR</span>
+          <p data-en="Industrial robotics: performance and safety evaluation of robots, production-flow optimization and work-process design." data-fr="Robotique industrielle : évaluation des performances et de la sécurité des robots, optimisation des flux et élaboration de gammes de travail.">Industrial robotics: performance and safety evaluation of robots, production-flow optimization and work-process design.</p>
+        </li>
+      </ul>
+      <aside class="facts reveal">
+        <dl>
+          <dt data-en="Degree" data-fr="Diplôme">Degree</dt>
+          <dd data-en="Mechanical &amp; Automation Eng. — INSA Rennes (2020–2026)" data-fr="Génie Mécanique &amp; Automatique — INSA Rennes (2020–2026)">Mechanical &amp; Automation Eng. — INSA Rennes (2020–2026)</dd>
+          <dt data-en="Focus" data-fr="Spécialité">Focus</dt>
+          <dd data-en="Robotics &amp; autonomous systems" data-fr="Robotique &amp; systèmes autonomes">Robotics &amp; autonomous systems</dd>
+          <dt data-en="Abroad" data-fr="International">Abroad</dt>
+          <dd data-en="Gap year in Chile (2024–25) · Erasmus in Hungary (2024)" data-fr="Césure au Chili (2024–25) · Erasmus en Hongrie (2024)">Gap year in Chile (2024–25) · Erasmus in Hungary (2024)</dd>
+          <dt data-en="Languages" data-fr="Langues">Languages</dt>
+          <dd data-en="French (native), English (C1)" data-fr="Français (natif), Anglais (C1)">French (native), English (C1)</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOOLS ============ -->
+<section id="stack">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-en="Toolbox" data-fr="Outils">Toolbox</span>
+      <h2 data-en="Tools" data-fr="Outils">Tools</h2>
+    </div>
+    <div class="stack reveal">
+      <div class="grp">
+        <span class="k" data-en="MECHANICAL · CAD" data-fr="MÉCANIQUE · CAO">MECHANICAL · CAD</span>
+        <ul><li>SolidWorks</li><li>CATIA</li><li>Adams</li><li data-en="3D printing" data-fr="Impression 3D">3D printing</li></ul>
+      </div>
+      <div class="grp">
+        <span class="k" data-en="CONTROL · MODELING" data-fr="CONTRÔLE · MODÉLISATION">CONTROL · MODELING</span>
+        <ul><li>MATLAB / Simulink</li><li>PID · Kalman</li><li data-en="State estimation" data-fr="Estimation d'état">State estimation</li></ul>
+      </div>
+      <div class="grp">
+        <span class="k" data-en="SOFTWARE · ROBOTICS" data-fr="LOGICIEL · ROBOTIQUE">SOFTWARE · ROBOTICS</span>
+        <ul><li>Python · C++</li><li>ROS 2</li><li>Gazebo</li><li>YOLO · OptiTrack</li></ul>
+      </div>
+      <div class="grp">
+        <span class="k" data-en="AUTOMATION · MFG" data-fr="AUTOMATISME · PROD">AUTOMATION · MFG</span>
+        <ul><li>Siemens PLC</li><li>LabVIEW</li><li>TopSolid (CAM)</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact">
+  <div class="wrap">
+    <span class="eyebrow reveal" data-en="Get in touch" data-fr="Me contacter">Get in touch</span>
+    <h2 class="reveal" data-en="Open to robotics &amp; engineering roles from October 2026." data-fr="Ouvert aux postes en robotique &amp; ingénierie dès octobre 2026.">Open to robotics &amp; engineering roles from October 2026.</h2>
+    <p class="lead reveal" data-en="France-based, open to the US. Happy to walk through any of these projects in detail." data-fr="Basé en France, ouvert aux États-Unis. Disponible pour détailler n'importe lequel de ces projets.">France-based, open to the US. Happy to walk through any of these projects in detail.</p>
+    <div class="cta reveal" style="justify-content:center">
+      <a class="btn primary" href="mailto:guillaume.guguen@outlook.fr">guillaume.guguen@outlook.fr</a>
+      <!-- 👉 add your real links -->
+      <a class="btn" href="#">LinkedIn</a>
+      <a class="btn" href="#">GitHub</a>
+      <a class="btn" href="#">CV (PDF)</a>
+    </div>
+    <p class="foot-meta">Guillaume Guguen · <span data-en="Mechatronics Engineer" data-fr="Ingénieur Mécatronique">Mechatronics Engineer</span></p>
+  </div>
+</footer>
+
+<script>
+  function setLang(l){
+    document.documentElement.setAttribute('lang', l);
+    document.querySelectorAll('[data-'+l+']').forEach(function(el){
+      el.innerHTML = el.getAttribute('data-'+l);
+    });
+    document.getElementById('langEN').setAttribute('aria-pressed', l==='en');
+    document.getElementById('langFR').setAttribute('aria-pressed', l==='fr');
+  }
+  function toggleTheme(){
+    var cur = document.documentElement.getAttribute('data-theme');
+    var next = cur==='dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    document.getElementById('themeBtn').textContent = next==='dark' ? '☾' : '☀';
+  }
+  (function(){
+    var t = document.documentElement.getAttribute('data-theme');
+    document.getElementById('themeBtn').textContent = t==='dark' ? '☾' : '☀';
+    var browser = (navigator.language||'en').toLowerCase().indexOf('fr')===0 ? 'fr' : 'en';
+    if(browser==='fr') setLang('fr');
+  })();
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    ['lp1','lp2','lp3','lp4'].forEach(function(id,i){
+      var p=document.getElementById(id); if(!p) return;
+      var len=p.getTotalLength();
+      p.style.strokeDasharray=len; p.style.strokeDashoffset=len;
+      p.style.transition='stroke-dashoffset .6s ease '+(i*0.2)+'s';
+      requestAnimationFrame(function(){requestAnimationFrame(function(){p.style.strokeDashoffset=0;});});
+    });
+  }
+</script>
+</body>
+</html>
