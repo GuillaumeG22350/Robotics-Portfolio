@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guillaume Guguen — Mechatronics Engineer</title>
-<meta name="description" content="Mechatronics engineer — mechanical design, electronics, control and software. Robotics roles, graduating August 2026.">
+<title>Guillaume Guguen — Ingénieur Mécatronique</title>
+<meta name="description" content="Ingénieur mécatronique. Mécanique, électronique, commande et logiciel. Postes en robotique, diplômé août 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
   h1{font-size:clamp(2.2rem,5.4vw,3.5rem);letter-spacing:-.02em}
   h2{font-size:clamp(1.6rem,3.2vw,2.2rem);letter-spacing:-.01em}
   p{margin:0 0 1rem}
-  .lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--muted);max-width:62ch}
+  .lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--muted);max-width:60ch}
   .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;
     text-transform:uppercase;color:var(--accent)}
 
@@ -62,20 +62,24 @@
   .iconbtn:hover{border-color:var(--faint)}
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-  .hero{padding:clamp(60px,10vw,110px) 0 clamp(50px,7vw,80px)}
-  .hero h1{margin:.9rem 0 1.4rem;max-width:18ch}
+  /* HERO with portrait */
+  .hero{padding:clamp(54px,9vw,96px) 0 clamp(46px,6vw,72px)}
+  .hero-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:clamp(28px,5vw,56px);align-items:center}
+  .hero h1{margin:.9rem 0 1.3rem;max-width:18ch}
   .hero h1 em{font-style:normal;color:var(--accent)}
-  .cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem}
+  .hero-photo{width:100%;display:block;border-radius:14px;border:1px solid var(--line);
+    object-fit:cover;aspect-ratio:4/5;background:var(--surface)}
+  .cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.8rem}
   .btn{font-family:var(--mono);font-size:13px;letter-spacing:.02em;padding:.7em 1.15em;
     border-radius:8px;border:1px solid var(--line);color:var(--text);transition:.2s}
   .btn:hover{border-color:var(--faint);transform:translateY(-1px)}
   .btn.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:500}
-  .meta{display:flex;flex-wrap:wrap;gap:1.3rem;margin-top:2rem;
+  .meta{display:flex;flex-wrap:wrap;gap:1.3rem;margin-top:1.8rem;
     font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.02em}
   .meta b{color:var(--text);font-weight:500}
 
-  section{padding:clamp(60px,9vw,100px) 0;border-top:1px solid var(--line)}
-  .sec-head{margin-bottom:clamp(36px,5vw,56px)}
+  section{padding:clamp(56px,8vw,92px) 0;border-top:1px solid var(--line)}
+  .sec-head{margin-bottom:clamp(34px,5vw,52px)}
   .sec-head h2{margin:.7rem 0 0}
 
   .caps{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,3vw,26px)}
@@ -84,7 +88,7 @@
   .cap-card h3{font-size:1.15rem;margin:.7rem 0 .5rem}
   .cap-card p{font-size:.95rem;color:var(--muted);margin:0}
 
-  .proj{padding-block:clamp(44px,7vw,72px)}
+  .proj{padding-block:clamp(42px,6vw,68px)}
   .proj+.proj{border-top:1px solid var(--line)}
   .proj-tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
     text-transform:uppercase;color:var(--muted)}
@@ -100,7 +104,6 @@
   .skills .tags span{font-family:var(--mono);font-size:11.5px;color:var(--text);
     border:1px solid var(--line);border-radius:6px;padding:.32em .65em}
 
-  /* media (real content) */
   .media{margin:1.4rem 0}
   .media img,.media video{width:100%;display:block;border:1px solid var(--line);
     border-radius:10px;background:var(--surface)}
@@ -139,7 +142,7 @@
   .grp ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.5rem}
   .grp li{font-size:.94rem;color:var(--muted)}
 
-  footer{border-top:1px solid var(--line);padding:clamp(60px,9vw,96px) 0 48px;text-align:center}
+  footer{border-top:1px solid var(--line);padding:clamp(56px,8vw,88px) 0 48px;text-align:center}
   footer h2{margin:1rem 0}
   footer .lead{margin:0 auto 2rem}
   .foot-meta{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:2.4rem}
@@ -153,6 +156,10 @@
     .slot-2{grid-template-columns:1fr}
     .nav-links{display:none}
   }
+  @media(max-width:760px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero-photo{max-width:320px}
+  }
   @media(max-width:500px){.caps,.stack{grid-template-columns:1fr}}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
@@ -163,9 +170,9 @@
   <div class="nav-in">
     <a class="brand" href="#top">G.<span>GUGUEN</span></a>
     <nav class="nav-links">
-      <a href="#skills" data-en="Skills" data-fr="Compétences">Skills</a>
       <a href="#projects" data-en="Projects" data-fr="Projets">Projects</a>
-      <a href="#about" data-en="About" data-fr="Parcours">About</a>
+      <a href="#about" data-en="Background" data-fr="Parcours">Background</a>
+      <a href="#profile" data-en="Profile" data-fr="Profil">Profile</a>
       <a href="#contact" data-en="Contact" data-fr="Contact">Contact</a>
     </nav>
     <div class="ctrl">
@@ -181,52 +188,26 @@
 <a id="top"></a>
 <section class="hero" style="border-top:none">
   <div class="wrap">
-    <span class="eyebrow" data-en="Mechatronics Engineer · Robotics" data-fr="Ingénieur Mécatronique · Robotique">Mechatronics Engineer · Robotics</span>
-    <h1 data-en="Mechatronics engineer — from <em>mechanical design</em> to <em>control software</em>." data-fr="Ingénieur mécatronique — de la <em>conception mécanique</em> au <em>logiciel de commande</em>.">Mechatronics engineer — from <em>mechanical design</em> to <em>control software</em>.</h1>
-    <p class="lead" data-en="INSA Rennes graduate. I work across mechanics, electronics, control and software — the full mechatronics chain — and bring complex systems to life, from a spec to a working prototype. Proven on demanding robotics projects, from industrial automation to autonomous systems." data-fr="Diplômé de l'INSA Rennes. Je travaille à la croisée de la mécanique, de l'électronique, du contrôle-commande et du logiciel — toute la chaîne mécatronique — pour donner vie à des systèmes complexes, du cahier des charges au prototype fonctionnel. Éprouvé sur des projets robotiques exigeants, de l'automatisation industrielle aux systèmes autonomes.">INSA Rennes graduate. I work across mechanics, electronics, control and software — the full mechatronics chain — and bring complex systems to life, from a spec to a working prototype. Proven on demanding robotics projects, from industrial automation to autonomous systems.</p>
-    <div class="cta">
-      <a class="btn primary" href="#projects" data-en="View projects" data-fr="Voir les projets">View projects</a>
-      <!-- 👉 Replace # with your real links -->
-      <a class="btn" href="mailto:guillaume.guguen@outlook.fr">Email</a>
-      <a class="btn" href="#">LinkedIn</a>
-      <a class="btn" href="#">CV (PDF)</a>
-    </div>
-    <div class="meta">
-      <span data-en="GRADUATING <b>AUG 2026</b>" data-fr="DIPLÔMÉ <b>AOÛT 2026</b>">GRADUATING <b>AUG 2026</b></span>
-      <span data-en="FRANCE · OPEN TO <b>US</b>" data-fr="FRANCE · OUVERT AUX <b>US</b>">FRANCE · OPEN TO <b>US</b></span>
-      <span data-en="FR native · EN <b>C1</b>" data-fr="FR natif · EN <b>C1</b>">FR native · EN <b>C1</b></span>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SKILLS ============ -->
-<section id="skills">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow" data-en="What I do" data-fr="Mon profil">What I do</span>
-      <h2 data-en="A full-chain engineer." data-fr="Un ingénieur de toute la chaîne.">A full-chain engineer.</h2>
-    </div>
-    <div class="caps">
-      <div class="cap-card reveal">
-        <span class="k" data-en="MECHANICAL · DESIGN" data-fr="MÉCANIQUE · CONCEPTION">MECHANICAL · DESIGN</span>
-        <h3 data-en="Design &amp; modeling" data-fr="Conception &amp; modélisation">Design &amp; modeling</h3>
-        <p data-en="CAD, dynamic modeling, sizing and rapid prototyping — from a spec to a validated part." data-fr="CAO, modélisation dynamique, dimensionnement et prototypage rapide — du cahier des charges à la pièce validée.">CAD, dynamic modeling, sizing and rapid prototyping — from a spec to a validated part.</p>
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" data-en="Mechatronics Engineer · Robotics" data-fr="Ingénieur Mécatronique · Robotique">Mechatronics Engineer · Robotics</span>
+        <h1 data-en="From <em>mechanics</em> to <em>control</em>, I build robotic systems." data-fr="De la <em>mécanique</em> à la <em>commande</em>, je construis des systèmes robotiques.">From <em>mechanics</em> to <em>control</em>, I build robotic systems.</h1>
+        <p class="lead" data-en="Mechatronics engineer trained at INSA Rennes. I cover mechanics, electronics, control and software. I design, integrate and test complete robotic systems." data-fr="Ingénieur mécatronique formé à l'INSA Rennes. Je couvre la mécanique, l'électronique, la commande et le logiciel. Je conçois, j'intègre et je teste des systèmes robotiques complets.">Mechatronics engineer trained at INSA Rennes. I cover mechanics, electronics, control and software. I design, integrate and test complete robotic systems.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects" data-en="View projects" data-fr="Voir les projets">View projects</a>
+          <a class="btn" href="mailto:guillaume.guguen@outlook.fr">Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/guillaume-guguen-8ab34021b/" target="_blank" rel="noopener">LinkedIn</a>
+          <!-- 👉 Mets ton CV dans media/ sous le nom CV_Guillaume_Guguen.pdf -->
+          <a class="btn" href="media/CV_Guillaume_Guguen.pdf" target="_blank" rel="noopener" data-en="CV (PDF)" data-fr="CV (PDF)">CV (PDF)</a>
+        </div>
+        <div class="meta">
+          <span data-en="GRADUATING <b>AUG 2026</b>" data-fr="DIPLÔMÉ <b>AOÛT 2026</b>">GRADUATING <b>AUG 2026</b></span>
+          <span data-en="OPEN IN <b>FRANCE &amp; US</b>" data-fr="OUVERT EN <b>FRANCE &amp; USA</b>">OPEN IN <b>FRANCE &amp; US</b></span>
+          <span data-en="FR native · EN <b>C1</b>" data-fr="FR natif · EN <b>C1</b>">FR native · EN <b>C1</b></span>
+        </div>
       </div>
-      <div class="cap-card reveal">
-        <span class="k" data-en="ELECTRONICS · INTEGRATION" data-fr="ÉLECTRONIQUE · INTÉGRATION">ELECTRONICS · INTEGRATION</span>
-        <h3 data-en="System integration" data-fr="Intégration système">System integration</h3>
-        <p data-en="Component selection, wiring, sensor and actuator integration, and bring-up of embedded systems." data-fr="Choix de composants, câblage, intégration capteurs/actionneurs et mise en service de systèmes embarqués.">Component selection, wiring, sensor and actuator integration, and bring-up of embedded systems.</p>
-      </div>
-      <div class="cap-card reveal">
-        <span class="k" data-en="CONTROL · ESTIMATION" data-fr="CONTRÔLE · ESTIMATION">CONTROL · ESTIMATION</span>
-        <h3 data-en="Control &amp; estimation" data-fr="Contrôle-commande &amp; estimation">Control &amp; estimation</h3>
-        <p data-en="Closed-loop control (PID), state estimation (Kalman filtering) and modeling — validated from simulation to real hardware." data-fr="Asservissement (PID), estimation d'état (filtrage de Kalman) et modélisation — validés de la simulation au matériel réel.">Closed-loop control (PID), state estimation (Kalman filtering) and modeling — validated from simulation to real hardware.</p>
-      </div>
-      <div class="cap-card reveal">
-        <span class="k" data-en="SOFTWARE · ROBOTICS" data-fr="LOGICIEL · ROBOTIQUE">SOFTWARE · ROBOTICS</span>
-        <h3 data-en="Software &amp; robotics" data-fr="Logiciel &amp; robotique">Software &amp; robotics</h3>
-        <p data-en="Programming, real-time middleware, physics simulation and computer vision for autonomous and automated systems." data-fr="Programmation, middleware temps réel, simulation physique et vision par ordinateur pour systèmes autonomes et automatisés.">Programming, real-time middleware, physics simulation and computer vision for autonomous and automated systems.</p>
-      </div>
+      <!-- 👉 Photo de toi : media/portrait.jpg -->
+      <img class="hero-photo" src="media/portrait.jpg" alt="Guillaume Guguen">
     </div>
   </div>
 </section>
@@ -235,55 +216,62 @@
 <section id="projects">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow" data-en="Selected work" data-fr="Travaux choisis">Selected work</span>
+      <span class="eyebrow" data-en="Selected work" data-fr="Travaux">Selected work</span>
       <h2 data-en="Projects" data-fr="Projets">Projects</h2>
     </div>
 
     <!-- Neutron IT -->
     <article class="proj reveal">
-      <span class="proj-tag" data-en="Neutron IT · Startup contract (Junior Enterprise)" data-fr="Neutron IT · Contrat startup (Junior Entreprise)">Neutron IT · Startup contract (Junior Enterprise)</span>
-      <h3 data-en="Custom UAV — full mechatronic build" data-fr="Drone sur mesure — conception mécatronique complète">Custom UAV — full mechatronic build</h3>
-      <p data-en="A startup contract to design and build a complete system from a blank spec. I ran the entire cycle: requirements analysis and component selection, mechanical design of custom parts in CAD, assembly and wiring, software integration of an onboard computer, autonomous-flight testing, and a delivered user manual. A project that spans every mechatronics discipline, end to end." data-fr="Un contrat pour une startup : concevoir et construire un système complet à partir d'un cahier des charges vierge. J'ai mené tout le cycle : analyse du besoin et choix des composants, conception mécanique de pièces sur mesure en CAO, assemblage et câblage, intégration logicielle d'un ordinateur embarqué, essais en vol autonome et notice d'utilisation livrée. Un projet qui couvre toutes les disciplines de la mécatronique, de bout en bout.">A startup contract to design and build a complete system from a blank spec. I ran the entire cycle: requirements analysis and component selection, mechanical design of custom parts in CAD, assembly and wiring, software integration of an onboard computer, autonomous-flight testing, and a delivered user manual. A project that spans every mechatronics discipline, end to end.</p>
+      <span class="proj-tag" data-en="Neutron IT · Startup contract" data-fr="Neutron IT · Contrat startup">Neutron IT · Startup contract</span>
+      <h3 data-en="Custom UAV, full mechatronic build" data-fr="Drone sur mesure, conception mécatronique complète">Custom UAV, full mechatronic build</h3>
+      <p data-en="Contract for a startup. Working from a fixed spec, I designed and built a complete drone. I ran the whole cycle, from requirements and component selection to autonomous-flight tests. I imagined and drew the custom parts in CAD, did the assembly, the wiring, the soldering of the electronics and integrated an onboard computer. I wrote the flight control and handled the full hardware integration." data-fr="Contrat pour une startup. À partir d'un cahier des charges imposé, j'ai conçu et fabriqué un drone complet. J'ai mené tout le cycle, de l'analyse du besoin et du choix des composants jusqu'aux essais en vol autonome. J'ai imaginé et dessiné les pièces sur mesure en CAO, fait l'assemblage, le câblage, la soudure de l'électronique et intégré un ordinateur embarqué. J'ai écrit la commande de vol et géré toute l'intégration matérielle.">Contract for a startup. Working from a fixed spec, I designed and built a complete drone. I ran the whole cycle, from requirements and component selection to autonomous-flight tests. I imagined and drew the custom parts in CAD, did the assembly, the wiring, the soldering of the electronics and integrated an onboard computer. I wrote the flight control and handled the full hardware integration.</p>
       <div class="skills">
         <span class="lab" data-en="Skills" data-fr="Compétences">Skills</span>
         <div class="tags">
           <span data-en="Requirements analysis" data-fr="Analyse du besoin">Requirements analysis</span>
           <span data-en="Mechanical CAD" data-fr="CAO mécanique">Mechanical CAD</span>
           <span data-en="Component selection" data-fr="Choix de composants">Component selection</span>
-          <span data-en="System integration" data-fr="Intégration système">System integration</span>
-          <span data-en="Project management" data-fr="Gestion de projet">Project management</span>
+          <span data-en="Control" data-fr="Commande">Control</span>
+          <span data-en="Hardware integration" data-fr="Intégration matérielle">Hardware integration</span>
         </div>
       </div>
       <div class="slot-2">
         <figure class="media">
-          <img src="media/neutron-drone.jpeg" alt="Custom UAV">
+          <img src="media/neutron-drone.jpeg" alt="Drone Neutron IT">
           <figcaption data-en="The drone" data-fr="Le drone">The drone</figcaption>
         </figure>
         <figure class="media">
-          <img src="media/neutron-solidworks.jpg" alt="SolidWorks design">
+          <img src="media/neutron-solidworks.jpg" alt="Conception SolidWorks">
           <figcaption data-en="CAD design (SolidWorks)" data-fr="Conception CAO (SolidWorks)">CAD design (SolidWorks)</figcaption>
         </figure>
       </div>
-      <figure class="media">
-        <video src="media/neutron-flight.mp4" controls playsinline preload="metadata"></video>
-        <figcaption data-en="Autonomous flight" data-fr="Vol autonome">Autonomous flight</figcaption>
-      </figure>
+      <div class="slot-2">
+        <figure class="media">
+          <!-- 👉 Photo de toi en train de souder : media/guillaume-soudure.jpg -->
+          <img src="media/guillaume-soudure.jpg" alt="Soudure de l'électronique">
+          <figcaption data-en="Soldering the electronics" data-fr="Soudure de l'électronique">Soldering the electronics</figcaption>
+        </figure>
+        <figure class="media">
+          <video src="media/neutron-flight.mp4" controls playsinline preload="metadata"></video>
+          <figcaption data-en="Autonomous flight" data-fr="Vol autonome">Autonomous flight</figcaption>
+        </figure>
+      </div>
     </article>
 
     <!-- Interception -->
     <article class="proj reveal">
       <span class="proj-tag" data-en="DGA · Guidance, Navigation &amp; Control" data-fr="DGA · Guidage, Navigation &amp; Commande">DGA · Guidance, Navigation &amp; Control</span>
       <h3 data-en="Vision-based autonomous interception" data-fr="Interception autonome par vision">Vision-based autonomous interception</h3>
-      <p data-en="A complete guidance, navigation and control system that detects, tracks and intercepts a moving target from a single camera. I built the full estimation-and-control chain: a pinhole projection model, an Extended Kalman Filter for 3D state estimation, and proportional-navigation guidance with a terminal maneuver — validated from simulation to flight." data-fr="Un système complet de guidage, navigation et commande qui détecte, suit et intercepte une cible mobile à partir d'une seule caméra. J'ai développé toute la chaîne d'estimation et de commande : modèle de projection pinhole, filtre de Kalman étendu pour l'estimation d'état 3D, et guidage par navigation proportionnelle avec manœuvre terminale — validé de la simulation au vol.">A complete guidance, navigation and control system that detects, tracks and intercepts a moving target from a single camera. I built the full estimation-and-control chain: a pinhole projection model, an Extended Kalman Filter for 3D state estimation, and proportional-navigation guidance with a terminal maneuver — validated from simulation to flight.</p>
-      <p class="stats" data-en="100% on static targets · moving targets ≤ 5 m/s · 20 Hz control loop · Gazebo · PX4 · ROS 2" data-fr="100% sur cibles statiques · cibles mobiles ≤ 5 m/s · boucle de commande 20 Hz · Gazebo · PX4 · ROS 2">100% on static targets · moving targets ≤ 5 m/s · 20 Hz control loop · Gazebo · PX4 · ROS 2</p>
+      <p data-en="Project carried out during my internship at DGA. A guidance, navigation and control system that detects, tracks and intercepts a moving target from a single camera. The full chain. Target detection with a YOLO, estimation of the target position and velocity with an Extended Kalman Filter, then proportional-navigation guidance with a terminal maneuver. I developed the estimation and the control laws, validated from simulation to flight." data-fr="Projet mené pendant mon stage à la DGA. Un système de guidage, navigation et commande qui détecte, suit et intercepte une cible mobile à partir d'une seule caméra. La chaîne est complète. Détection de la cible par un YOLO, estimation de sa position et de sa vitesse par un filtre de Kalman étendu, puis guidage par navigation proportionnelle avec manœuvre terminale. J'ai développé l'estimation et les lois de commande, validées de la simulation au vol.">Project carried out during my internship at DGA. A guidance, navigation and control system that detects, tracks and intercepts a moving target from a single camera. The full chain. Target detection with a YOLO, estimation of the target position and velocity with an Extended Kalman Filter, then proportional-navigation guidance with a terminal maneuver. I developed the estimation and the control laws, validated from simulation to flight.</p>
+      <p class="stats" data-en="Interception 100% on static targets · moving targets ≤ 5 m/s · 20 Hz control loop · Gazebo · PX4 · ROS 2" data-fr="Interception 100% sur cibles statiques · cibles mobiles ≤ 5 m/s · boucle de commande 20 Hz · Gazebo · PX4 · ROS 2">Interception 100% on static targets · moving targets ≤ 5 m/s · 20 Hz control loop · Gazebo · PX4 · ROS 2</p>
       <div class="skills">
         <span class="lab" data-en="Skills" data-fr="Compétences">Skills</span>
         <div class="tags">
+          <span data-en="Detection (YOLO)" data-fr="Détection (YOLO)">Detection (YOLO)</span>
           <span data-en="State estimation (EKF)" data-fr="Estimation d'état (EKF)">State estimation (EKF)</span>
-          <span data-en="Computer vision" data-fr="Vision par ordinateur">Computer vision</span>
-          <span data-en="Guidance &amp; control laws" data-fr="Lois de guidage &amp; commande">Guidance &amp; control laws</span>
+          <span data-en="Proportional navigation" data-fr="Navigation proportionnelle">Proportional navigation</span>
+          <span data-en="Control" data-fr="Commande">Control</span>
           <span data-en="ROS 2 / Python" data-fr="ROS 2 / Python">ROS 2 / Python</span>
-          <span data-en="Sim-to-real" data-fr="Simulation→réel">Sim-to-real</span>
         </div>
       </div>
       <div class="slot-2">
@@ -292,35 +280,23 @@
           <figcaption data-en="Interception run" data-fr="Vol d'interception">Interception run</figcaption>
         </figure>
         <figure class="media">
-          <img src="media/interception-results.png" alt="Interception results">
+          <img src="media/interception-results.png" alt="Résultats d'interception">
           <figcaption data-en="Results" data-fr="Résultats">Results</figcaption>
         </figure>
       </div>
-      <details class="code">
-        <summary data-en="Sample code · estimation-to-guidance command (Python)" data-fr="Extrait de code · de l'estimation à la commande (Python)">Sample code · estimation-to-guidance command (Python)</summary>
-<pre><code><span class="cmt"># LOS angle + rate from the EKF state, ego-rotation removed</span>
-los_angle = atan2(X, Z)
-los_rate  = (Vx*Z - X*Vz)/(X**<span class="kw">2</span> + Z**<span class="kw">2</span>) + yaw_rate
-
-<span class="cmt"># Proportional navigation -> bounded lateral velocity setpoint</span>
-Vc    = max(-Vz, forward_speed)
-a_lat = N * Vc * los_rate          <span class="cmt"># N = navigation constant</span>
-Vy    = clip((Vy + a_lat*dt)*<span class="kw">0.998</span>, -<span class="kw">10</span>, <span class="kw">10</span>)</code></pre>
-      </details>
     </article>
 
     <!-- Formation flight -->
     <article class="proj reveal">
       <span class="proj-tag" data-en="DGA · Multi-agent control" data-fr="DGA · Commande multi-agents">DGA · Multi-agent control</span>
       <h3 data-en="Collaborative formation flight" data-fr="Vol collaboratif en formation">Collaborative formation flight</h3>
-      <p data-en="Control laws that keep several agents in formation along complex trajectories. I developed and compared two architectures — a rigid-body Leader-Follower with PID, and an artificial-potential-field approach — then identified a formation-rotation issue in turns (not covered in the literature) and solved it with a hybrid switching logic. Validated in simulation, then on real hardware in an OptiTrack motion-capture arena." data-fr="Des lois de commande qui maintiennent plusieurs agents en formation le long de trajectoires complexes. J'ai développé et comparé deux architectures — un Leader-Follower de type solide rigide avec PID, et une approche par potentiels artificiels — puis identifié un problème de rotation de la formation en virage (absent de la littérature) résolu par une logique de commutation hybride. Validé en simulation, puis sur matériel réel dans une arène de capture de mouvement OptiTrack.">Control laws that keep several agents in formation along complex trajectories. I developed and compared two architectures — a rigid-body Leader-Follower with PID, and an artificial-potential-field approach — then identified a formation-rotation issue in turns (not covered in the literature) and solved it with a hybrid switching logic. Validated in simulation, then on real hardware in an OptiTrack motion-capture arena.</p>
-      <p class="stats" data-en="10-agent scale-up (sim) · ~0.45 m tracking error · sim-to-real validated · OptiTrack" data-fr="passage à 10 agents (sim) · erreur de suivi ~0,45 m · validation sim→réel · OptiTrack">10-agent scale-up (sim) · ~0.45 m tracking error · sim-to-real validated · OptiTrack</p>
+      <p data-en="Project carried out during my internship at DGA. Control laws that keep several drones in formation along a trajectory. I developed and compared two architectures. A Leader-Follower, where each drone holds a fixed position relative to the leader, corrected by a PID. And a GS-RUFF law, based on attraction and repulsion potentials that set both the shape of the formation and the pull toward the trajectory. Validated in simulation then on real drones in an OptiTrack motion-capture arena." data-fr="Projet mené pendant mon stage à la DGA. Des lois de commande qui maintiennent plusieurs drones en formation le long d'une trajectoire. J'ai développé et comparé deux architectures. Un Leader-Follower, où chaque drone garde une position fixe par rapport au leader, corrigée par un PID. Et une loi GS-RUFF, à base de potentiels d'attraction et de répulsion qui donnent à la fois la forme de la formation et l'attraction vers la trajectoire. Validé en simulation puis sur drones réels dans une arène de capture de mouvement OptiTrack.">Project carried out during my internship at DGA. Control laws that keep several drones in formation along a trajectory. I developed and compared two architectures. A Leader-Follower, where each drone holds a fixed position relative to the leader, corrected by a PID. And a GS-RUFF law, based on attraction and repulsion potentials that set both the shape of the formation and the pull toward the trajectory. Validated in simulation then on real drones in an OptiTrack motion-capture arena.</p>
       <div class="skills">
         <span class="lab" data-en="Skills" data-fr="Compétences">Skills</span>
         <div class="tags">
           <span data-en="Multi-agent control" data-fr="Commande multi-agents">Multi-agent control</span>
-          <span data-en="PID &amp; feedforward" data-fr="PID &amp; anticipation">PID &amp; feedforward</span>
-          <span data-en="Trajectory generation" data-fr="Génération de trajectoires">Trajectory generation</span>
+          <span data-en="Leader-Follower (PID)" data-fr="Leader-Follower (PID)">Leader-Follower (PID)</span>
+          <span data-en="Potential fields (GS-RUFF)" data-fr="Potentiels (GS-RUFF)">Potential fields (GS-RUFF)</span>
           <span data-en="Real-time integration" data-fr="Intégration temps réel">Real-time integration</span>
           <span data-en="Motion capture (OptiTrack)" data-fr="Capture de mouvement (OptiTrack)">Motion capture (OptiTrack)</span>
         </div>
@@ -331,15 +307,73 @@ Vy    = clip((Vy + a_lat*dt)*<span class="kw">0.998</span>, -<span class="kw">10
           <figcaption data-en="Formation flight" data-fr="Vol en formation">Formation flight</figcaption>
         </figure>
         <figure class="media">
-          <img src="media/formation-results.png" alt="Formation tracking results">
+          <img src="media/formation-results.png" alt="Résultats de suivi de formation">
           <figcaption data-en="Tracking results" data-fr="Résultats de suivi">Tracking results</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- Cube haptique -->
+    <article class="proj reveal">
+      <span class="proj-tag" data-en="INSA Rennes · Industrial research project (ERC ADVHANDTURE)" data-fr="INSA Rennes · Projet industriel de recherche (ERC ADVHANDTURE)">INSA Rennes · Industrial research project (ERC ADVHANDTURE)</span>
+      <h3 data-en="Active haptic cube" data-fr="Cube haptique actif">Active haptic cube</h3>
+      <p data-en="Industrial research project at INSA Rennes, part of the European ERC ADVHANDTURE program at the LGCGM/IRISA lab. In virtual reality and teleoperation, hand-held interfaces are passive and always feel equally stiff. The goal is an active interface, a hand-held cube that changes its stiffness in real time so the user can feel objects that are harder or softer. I designed the device in CAD around a servomotor, prototyped it by 3D printing, and drove the stiffness from Matlab. The prototype validates the principle, with a clearly noticeable stiffness change. I did the control and the hardware integration." data-fr="Projet industriel de recherche à l'INSA Rennes, dans le cadre du programme européen ERC ADVHANDTURE au laboratoire LGCGM/IRISA. En réalité virtuelle et en téléopération, les interfaces tenues en main sont passives et rendent toujours la même rigidité. Le but est une interface active, un cube tenu en main qui change sa raideur en temps réel pour faire sentir des objets plus ou moins durs. J'ai conçu le dispositif en CAO autour d'un servomoteur, prototypé par impression 3D, et piloté la raideur depuis Matlab. Le prototype valide le principe, avec une variation de raideur nettement perceptible. J'ai fait la commande et l'intégration matérielle.">Industrial research project at INSA Rennes, part of the European ERC ADVHANDTURE program at the LGCGM/IRISA lab. In virtual reality and teleoperation, hand-held interfaces are passive and always feel equally stiff. The goal is an active interface, a hand-held cube that changes its stiffness in real time so the user can feel objects that are harder or softer. I designed the device in CAD around a servomotor, prototyped it by 3D printing, and drove the stiffness from Matlab. The prototype validates the principle, with a clearly noticeable stiffness change. I did the control and the hardware integration.</p>
+      <div class="skills">
+        <span class="lab" data-en="Skills" data-fr="Compétences">Skills</span>
+        <div class="tags">
+          <span data-en="Mechanical CAD" data-fr="CAO mécanique">Mechanical CAD</span>
+          <span data-en="Servo control (Dynamixel)" data-fr="Commande servomoteur (Dynamixel)">Servo control (Dynamixel)</span>
+          <span data-en="Matlab" data-fr="Matlab">Matlab</span>
+          <span data-en="3D printing" data-fr="Impression 3D">3D printing</span>
+          <span data-en="Hardware integration" data-fr="Intégration matérielle">Hardware integration</span>
+        </div>
+      </div>
+      <div class="slot-2">
+        <figure class="media">
+          <!-- 👉 Vidéo du cube en mouvement : media/cube-haptique.mp4 -->
+          <video src="media/cube-haptique.mp4" controls playsinline preload="metadata"></video>
+          <figcaption data-en="Stiffness modulation" data-fr="Modulation de la raideur">Stiffness modulation</figcaption>
+        </figure>
+        <figure class="media">
+          <!-- 👉 Image de la CAO (rendu ou capture SolidWorks) : media/cube-cao.png -->
+          <img src="media/cube-cao.png" alt="CAO du cube haptique">
+          <figcaption data-en="CAD design (SolidWorks)" data-fr="Conception CAO (SolidWorks)">CAD design (SolidWorks)</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- EXAIL -->
+    <article class="proj reveal">
+      <span class="proj-tag" data-en="EXAIL · Industrial automation" data-fr="EXAIL · Automatisation industrielle">EXAIL · Industrial automation</span>
+      <h3 data-en="Bragg grating photo-inscription bench" data-fr="Banc de photo-inscription de réseaux de Bragg">Bragg grating photo-inscription bench</h3>
+      <p data-en="Internship at EXAIL on a bench that makes fiber Bragg gratings and had quality defects. I compared it with a reference bench that worked well to trace the defects, then designed and machined new mechanical parts in SolidWorks that fixed them. I also rebuilt and reprogrammed the electronics of the bench pneumatic clamps that hold the fiber, and added automatic focusing of the bench UV laser beam, until then set by hand. Mechanical design, hardware integration and control." data-fr="Stage chez EXAIL sur un banc qui fabrique des réseaux de Bragg dans des fibres optiques et qui présentait des défauts de qualité. J'ai comparé ce banc à un poste de référence qui fonctionnait bien pour remonter à l'origine des défauts, puis j'ai conçu et usiné sous SolidWorks de nouvelles pièces mécaniques qui ont corrigé ces défauts. J'ai aussi remis à neuf et reprogrammé l'électronique des clamps pneumatiques du banc, qui maintiennent la fibre, et ajouté une focalisation automatique du faisceau laser UV du banc, jusque-là réglé à la main. Conception mécanique, intégration matérielle et commande.">Internship at EXAIL on a bench that makes fiber Bragg gratings and had quality defects. I compared it with a reference bench that worked well to trace the defects, then designed and machined new mechanical parts in SolidWorks that fixed them. I also rebuilt and reprogrammed the electronics of the bench pneumatic clamps that hold the fiber, and added automatic focusing of the bench UV laser beam, until then set by hand. Mechanical design, hardware integration and control.</p>
+      <div class="skills">
+        <span class="lab" data-en="Skills" data-fr="Compétences">Skills</span>
+        <div class="tags">
+          <span data-en="Mechanical CAD" data-fr="CAO mécanique">Mechanical CAD</span>
+          <span data-en="Machining" data-fr="Usinage">Machining</span>
+          <span data-en="Electronics" data-fr="Électronique">Electronics</span>
+          <span data-en="LabVIEW" data-fr="LabVIEW">LabVIEW</span>
+          <span data-en="Hardware integration" data-fr="Intégration matérielle">Hardware integration</span>
+        </div>
+      </div>
+      <div class="slot-2">
+        <figure class="media">
+          <!-- 👉 Photo du banc de photo-inscription : media/exail-banc.jpg -->
+          <img src="media/exail-banc.jpg" alt="Banc de photo-inscription de réseaux de Bragg">
+          <figcaption data-en="Photo-inscription bench" data-fr="Banc de photo-inscription">Photo-inscription bench</figcaption>
+        </figure>
+        <figure class="media">
+          <!-- 👉 Photo des pièces usinées : media/exail-pieces.jpg -->
+          <img src="media/exail-pieces.jpg" alt="Pièces usinées">
+          <figcaption data-en="Machined parts" data-fr="Pièces usinées">Machined parts</figcaption>
         </figure>
       </div>
     </article>
   </div>
 </section>
 
-<!-- ============ ABOUT ============ -->
+<!-- ============ BACKGROUND ============ -->
 <section id="about">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -351,27 +385,27 @@ Vy    = clip((Vy + a_lat*dt)*<span class="kw">0.998</span>, -<span class="kw">10
         <li>
           <span class="org">DGA — Direction Générale de l'Armement</span>
           <span class="role" data-en="Final-year engineering internship · 6 months · 2026 · Bruz, FR" data-fr="Stage de fin d'études ingénieur · 6 mois · 2026 · Bruz, FR">Final-year engineering internship · 6 months · 2026 · Bruz, FR</span>
-          <p data-en="Estimation, control and multi-agent systems — the interception and formation-flight projects above, from simulation to real hardware." data-fr="Estimation, commande et systèmes multi-agents — les projets d'interception et de vol en formation ci-dessus, de la simulation au matériel réel.">Estimation, control and multi-agent systems — the interception and formation-flight projects above, from simulation to real hardware.</p>
+          <p data-en="Development and integration of guidance and control laws (ROS 2, PX4, Python) for vision-based autonomous interception (YOLO, EKF) and swarm flight." data-fr="Développement et intégration de lois de guidage et de commande (ROS 2, PX4, Python) pour l'interception autonome par vision (YOLO, EKF) et le vol en essaim.">Development and integration of guidance and control laws (ROS 2, PX4, Python) for vision-based autonomous interception (YOLO, EKF) and swarm flight.</p>
         </li>
         <li>
-          <span class="org">EXAIL</span>
-          <span class="role" data-en="Internship · 6 months · 2025 · Lannion, FR" data-fr="Stage · 6 mois · 2025 · Lannion, FR">Internship · 6 months · 2025 · Lannion, FR</span>
-          <p data-en="Automation of a fiber Bragg grating photo-inscription bench: mechanical design in SolidWorks, precision-component selection, and a LabVIEW operator interface." data-fr="Automatisation d'un banc de photo-inscription de réseaux de Bragg : conception mécanique sous SolidWorks, choix de composants de précision et interface opérateur LabVIEW.">Automation of a fiber Bragg grating photo-inscription bench: mechanical design in SolidWorks, precision-component selection, and a LabVIEW operator interface.</p>
+          <span class="org">Neutron IT</span>
+          <span class="role" data-en="Startup contract · 2025–2026 · FR" data-fr="Contrat startup · 2025–2026 · FR">Startup contract · 2025–2026 · FR</span>
+          <p data-en="End-to-end design of a modular AI drone for a startup. Sizing and component selection from the spec, CAD modeling and 3D printing, hardware assembly, software integration and autonomous-flight validation." data-fr="Conception de A à Z d'un drone modulaire IA pour une startup. Dimensionnement et sélection des composants à partir du cahier des charges, modélisation CAO et impression 3D, assemblage matériel, intégration logicielle et validation en vol autonome.">End-to-end design of a modular AI drone for a startup. Sizing and component selection from the spec, CAD modeling and 3D printing, hardware assembly, software integration and autonomous-flight validation.</p>
         </li>
         <li>
           <span class="org">Stellantis</span>
           <span class="role" data-en="Internship · 2 months · 2023 · Rennes, FR" data-fr="Stage · 2 mois · 2023 · Rennes, FR">Internship · 2 months · 2023 · Rennes, FR</span>
-          <p data-en="Industrial robotics: performance and safety evaluation of robots, production-flow optimization and work-process design." data-fr="Robotique industrielle : évaluation des performances et de la sécurité des robots, optimisation des flux et élaboration de gammes de travail.">Industrial robotics: performance and safety evaluation of robots, production-flow optimization and work-process design.</p>
+          <p data-en="Industrial robotics. Performance and safety evaluation of robots, production-flow optimization and work-process design." data-fr="Robotique industrielle. Évaluation des performances et de la sécurité des robots, optimisation des flux et élaboration de gammes de travail.">Industrial robotics. Performance and safety evaluation of robots, production-flow optimization and work-process design.</p>
         </li>
       </ul>
       <aside class="facts reveal">
         <dl>
           <dt data-en="Degree" data-fr="Diplôme">Degree</dt>
-          <dd data-en="Mechanical &amp; Automation Eng. — INSA Rennes (2020–2026)" data-fr="Génie Mécanique &amp; Automatique — INSA Rennes (2020–2026)">Mechanical &amp; Automation Eng. — INSA Rennes (2020–2026)</dd>
+          <dd data-en="Mechanical &amp; Automation Eng., INSA Rennes (2020–2026)" data-fr="Génie Mécanique &amp; Automatique, INSA Rennes (2020–2026)">Mechanical &amp; Automation Eng., INSA Rennes (2020–2026)</dd>
           <dt data-en="Focus" data-fr="Spécialité">Focus</dt>
           <dd data-en="Robotics &amp; autonomous systems" data-fr="Robotique &amp; systèmes autonomes">Robotics &amp; autonomous systems</dd>
           <dt data-en="Abroad" data-fr="International">Abroad</dt>
-          <dd data-en="Gap year in Chile (2024–25) · Erasmus in Hungary (2024)" data-fr="Césure au Chili (2024–25) · Erasmus en Hongrie (2024)">Gap year in Chile (2024–25) · Erasmus in Hungary (2024)</dd>
+          <dd data-en="Gap year in Chile (2024–25), Erasmus in Hungary (2024)" data-fr="Césure au Chili (2024–25), Erasmus en Hongrie (2024)">Gap year in Chile (2024–25), Erasmus in Hungary (2024)</dd>
           <dt data-en="Languages" data-fr="Langues">Languages</dt>
           <dd data-en="French (native), English (C1)" data-fr="Français (natif), Anglais (C1)">French (native), English (C1)</dd>
         </dl>
@@ -380,29 +414,52 @@ Vy    = clip((Vy + a_lat*dt)*<span class="kw">0.998</span>, -<span class="kw">10
   </div>
 </section>
 
-<!-- ============ TOOLS ============ -->
-<section id="stack">
+<!-- ============ PROFILE (moved to the end) ============ -->
+<section id="profile">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow" data-en="Toolbox" data-fr="Outils">Toolbox</span>
-      <h2 data-en="Tools" data-fr="Outils">Tools</h2>
+      <span class="eyebrow" data-en="Profile" data-fr="Profil">Profile</span>
+      <h2 data-en="A full-chain engineer" data-fr="Un ingénieur de toute la chaîne">A full-chain engineer</h2>
     </div>
-    <div class="stack reveal">
+    <div class="caps">
+      <div class="cap-card reveal">
+        <span class="k" data-en="MECHANICAL · DESIGN" data-fr="MÉCANIQUE · CONCEPTION">MECHANICAL · DESIGN</span>
+        <h3 data-en="Design &amp; modeling" data-fr="Conception &amp; modélisation">Design &amp; modeling</h3>
+        <p data-en="CAD, sizing, machining and rapid prototyping. From a spec to a validated part." data-fr="CAO, dimensionnement, usinage et prototypage rapide. Du cahier des charges à la pièce validée.">CAD, sizing, machining and rapid prototyping. From a spec to a validated part.</p>
+      </div>
+      <div class="cap-card reveal">
+        <span class="k" data-en="ELECTRONICS · INTEGRATION" data-fr="ÉLECTRONIQUE · INTÉGRATION">ELECTRONICS · INTEGRATION</span>
+        <h3 data-en="Hardware integration" data-fr="Intégration matérielle">Hardware integration</h3>
+        <p data-en="Component selection, wiring, soldering, sensors and actuators, bring-up of embedded systems." data-fr="Choix de composants, câblage, soudure, capteurs et actionneurs, mise en service de systèmes embarqués.">Component selection, wiring, soldering, sensors and actuators, bring-up of embedded systems.</p>
+      </div>
+      <div class="cap-card reveal">
+        <span class="k" data-en="CONTROL · ESTIMATION" data-fr="COMMANDE · ESTIMATION">CONTROL · ESTIMATION</span>
+        <h3 data-en="Control &amp; estimation" data-fr="Commande &amp; estimation">Control &amp; estimation</h3>
+        <p data-en="Closed-loop control (PID), state estimation (Kalman) and modeling, validated from sim to real hardware." data-fr="Asservissement (PID), estimation d'état (Kalman) et modélisation, validés de la simulation au matériel réel.">Closed-loop control (PID), state estimation (Kalman) and modeling, validated from sim to real hardware.</p>
+      </div>
+      <div class="cap-card reveal">
+        <span class="k" data-en="SOFTWARE · ROBOTICS" data-fr="LOGICIEL · ROBOTIQUE">SOFTWARE · ROBOTICS</span>
+        <h3 data-en="Software &amp; robotics" data-fr="Logiciel &amp; robotique">Software &amp; robotics</h3>
+        <p data-en="Programming, real-time middleware, physics simulation and computer vision for autonomous systems." data-fr="Programmation, middleware temps réel, simulation physique et vision par ordinateur pour systèmes autonomes.">Programming, real-time middleware, physics simulation and computer vision for autonomous systems.</p>
+      </div>
+    </div>
+
+    <div class="stack reveal" style="margin-top:clamp(34px,5vw,52px)">
       <div class="grp">
         <span class="k" data-en="MECHANICAL · CAD" data-fr="MÉCANIQUE · CAO">MECHANICAL · CAD</span>
-        <ul><li>SolidWorks</li><li>CATIA</li><li>Adams</li><li data-en="3D printing" data-fr="Impression 3D">3D printing</li></ul>
+        <ul><li>SolidWorks</li><li>CATIA</li><li>TopSolid (CAM)</li><li data-en="3D printing" data-fr="Impression 3D">3D printing</li></ul>
       </div>
       <div class="grp">
-        <span class="k" data-en="CONTROL · MODELING" data-fr="CONTRÔLE · MODÉLISATION">CONTROL · MODELING</span>
-        <ul><li>MATLAB / Simulink</li><li>PID · Kalman</li><li data-en="State estimation" data-fr="Estimation d'état">State estimation</li></ul>
+        <span class="k" data-en="ELECTRONICS · EMBEDDED" data-fr="ÉLECTRONIQUE · EMBARQUÉ">ELECTRONICS · EMBEDDED</span>
+        <ul><li>Pixhawk · PX4</li><li>Raspberry Pi · Jetson</li><li>LabVIEW</li><li>Siemens PLC</li></ul>
+      </div>
+      <div class="grp">
+        <span class="k" data-en="CONTROL · MODELING" data-fr="COMMANDE · MODÉLISATION">CONTROL · MODELING</span>
+        <ul><li>MATLAB / Simulink</li><li>PID · Kalman</li><li>Adams</li></ul>
       </div>
       <div class="grp">
         <span class="k" data-en="SOFTWARE · ROBOTICS" data-fr="LOGICIEL · ROBOTIQUE">SOFTWARE · ROBOTICS</span>
         <ul><li>Python · C++</li><li>ROS 2</li><li>Gazebo</li><li>YOLO · OptiTrack</li></ul>
-      </div>
-      <div class="grp">
-        <span class="k" data-en="AUTOMATION · MFG" data-fr="AUTOMATISME · PROD">AUTOMATION · MFG</span>
-        <ul><li>Siemens PLC</li><li>LabVIEW</li><li>TopSolid (CAM)</li></ul>
       </div>
     </div>
   </div>
@@ -413,13 +470,11 @@ Vy    = clip((Vy + a_lat*dt)*<span class="kw">0.998</span>, -<span class="kw">10
   <div class="wrap">
     <span class="eyebrow reveal" data-en="Get in touch" data-fr="Me contacter">Get in touch</span>
     <h2 class="reveal" data-en="Open to robotics &amp; engineering roles from October 2026." data-fr="Ouvert aux postes en robotique &amp; ingénierie dès octobre 2026.">Open to robotics &amp; engineering roles from October 2026.</h2>
-    <p class="lead reveal" data-en="France-based, open to the US. Happy to walk through any of these projects in detail." data-fr="Basé en France, ouvert aux États-Unis. Disponible pour détailler n'importe lequel de ces projets.">France-based, open to the US. Happy to walk through any of these projects in detail.</p>
-    <div class="cta reveal" style="justify-content:center">
+    <div class="cta reveal" style="justify-content:center;margin-top:2rem">
       <a class="btn primary" href="mailto:guillaume.guguen@outlook.fr">guillaume.guguen@outlook.fr</a>
-      <!-- 👉 add your real links -->
-      <a class="btn" href="#">LinkedIn</a>
-      <a class="btn" href="#">GitHub</a>
-      <a class="btn" href="#">CV (PDF)</a>
+      <a class="btn" href="https://www.linkedin.com/in/guillaume-guguen-8ab34021b/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/guillaumeg22350" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="media/CV_Guillaume_Guguen.pdf" target="_blank" rel="noopener">CV (PDF)</a>
     </div>
     <p class="foot-meta">Guillaume Guguen · <span data-en="Mechatronics Engineer" data-fr="Ingénieur Mécatronique">Mechatronics Engineer</span></p>
   </div>
