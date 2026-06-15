@@ -240,8 +240,8 @@
           <figcaption data-en="The drone" data-fr="Le drone">The drone</figcaption>
         </figure>
         <figure class="media">
-          <img src="media/neutron-solidworks.jpg" alt="Conception SolidWorks">
-          <figcaption data-en="CAD design (SolidWorks)" data-fr="Conception CAO (SolidWorks)">CAD design (SolidWorks)</figcaption>
+          <img src="media/neutron-solidworks.jpg" alt="Conception CAO">
+          <figcaption data-en="CAD design" data-fr="Conception CAO">CAD design</figcaption>
         </figure>
       </div>
       <div class="slot-2">
@@ -261,14 +261,14 @@
     <article class="proj reveal">
       <span class="proj-tag" data-en="DGA · Guidance, Navigation &amp; Control" data-fr="DGA · Guidage, Navigation &amp; Commande">DGA · Guidance, Navigation &amp; Control</span>
       <h3 data-en="Vision-based autonomous interception" data-fr="Interception autonome par vision">Vision-based autonomous interception</h3>
-      <p data-en="Project carried out during my internship at DGA. A guidance, navigation and control system that detects, tracks and intercepts a moving target from a single camera. The full chain. Target detection with a YOLO, estimation of the target position and velocity with an Extended Kalman Filter, then proportional-navigation guidance with a terminal maneuver. I developed the estimation and the control laws, validated from simulation to flight." data-fr="Projet mené pendant mon stage à la DGA. Un système de guidage, navigation et commande qui détecte, suit et intercepte une cible mobile à partir d'une seule caméra. La chaîne est complète. Détection de la cible par un YOLO, estimation de sa position et de sa vitesse par un filtre de Kalman étendu, puis guidage par navigation proportionnelle avec manœuvre terminale. J'ai développé l'estimation et les lois de commande, validées de la simulation au vol.">Project carried out during my internship at DGA. A guidance, navigation and control system that detects, tracks and intercepts a moving target from a single camera. The full chain. Target detection with a YOLO, estimation of the target position and velocity with an Extended Kalman Filter, then proportional-navigation guidance with a terminal maneuver. I developed the estimation and the control laws, validated from simulation to flight.</p>
+      <p data-en="Project carried out during my internship at DGA. A guidance, navigation and control system that detects, tracks and intercepts a moving target from a single camera. Target detection with an AI algorithm, estimation of its position and velocity with an Extended Kalman Filter, then development of guidance laws integrating the EKF outputs, from cruise flight to terminal guidance. Validated from simulation to flight." data-fr="Projet mené pendant mon stage à la DGA. Un système de guidage, navigation et commande qui détecte, suit et intercepte une cible mobile à partir d'une seule caméra. Détection de la cible par un algo IA, estimation de sa position et de sa vitesse par un filtre de Kalman étendu, puis développement de lois de guidage en intégrant les éléments de l'EKF, du vol de croisière jusqu'au guidage terminal. Validé de la simulation au vol.">Project carried out during my internship at DGA. A guidance, navigation and control system that detects, tracks and intercepts a moving target from a single camera. Target detection with an AI algorithm, estimation of its position and velocity with an Extended Kalman Filter, then development of guidance laws integrating the EKF outputs, from cruise flight to terminal guidance. Validated from simulation to flight.</p>
       <p class="stats" data-en="Interception 100% on static targets · moving targets ≤ 5 m/s · 20 Hz control loop · Gazebo · PX4 · ROS 2" data-fr="Interception 100% sur cibles statiques · cibles mobiles ≤ 5 m/s · boucle de commande 20 Hz · Gazebo · PX4 · ROS 2">Interception 100% on static targets · moving targets ≤ 5 m/s · 20 Hz control loop · Gazebo · PX4 · ROS 2</p>
       <div class="skills">
         <span class="lab" data-en="Skills" data-fr="Compétences">Skills</span>
         <div class="tags">
-          <span data-en="Detection (YOLO)" data-fr="Détection (YOLO)">Detection (YOLO)</span>
+          <span data-en="Detection (AI)" data-fr="Détection (IA)">Detection (AI)</span>
           <span data-en="State estimation (EKF)" data-fr="Estimation d'état (EKF)">State estimation (EKF)</span>
-          <span data-en="Proportional navigation" data-fr="Navigation proportionnelle">Proportional navigation</span>
+          <span data-en="Guidance laws" data-fr="Lois de guidage">Guidance laws</span>
           <span data-en="Control" data-fr="Commande">Control</span>
           <span data-en="ROS 2 / Python" data-fr="ROS 2 / Python">ROS 2 / Python</span>
         </div>
@@ -289,13 +289,13 @@
     <article class="proj reveal">
       <span class="proj-tag" data-en="DGA · Multi-agent control" data-fr="DGA · Commande multi-agents">DGA · Multi-agent control</span>
       <h3 data-en="Collaborative formation flight" data-fr="Vol collaboratif en formation">Collaborative formation flight</h3>
-      <p data-en="Project carried out during my internship at DGA. Control laws that keep several drones in formation along a trajectory. I developed and compared two architectures. A Leader-Follower, where each drone holds a fixed position relative to the leader, corrected by a PID. And a GS-RUFF law, based on attraction and repulsion potentials that set both the shape of the formation and the pull toward the trajectory. Validated in simulation then on real drones in an OptiTrack motion-capture arena." data-fr="Projet mené pendant mon stage à la DGA. Des lois de commande qui maintiennent plusieurs drones en formation le long d'une trajectoire. J'ai développé et comparé deux architectures. Un Leader-Follower, où chaque drone garde une position fixe par rapport au leader, corrigée par un PID. Et une loi GS-RUFF, à base de potentiels d'attraction et de répulsion qui donnent à la fois la forme de la formation et l'attraction vers la trajectoire. Validé en simulation puis sur drones réels dans une arène de capture de mouvement OptiTrack.">Project carried out during my internship at DGA. Control laws that keep several drones in formation along a trajectory. I developed and compared two architectures. A Leader-Follower, where each drone holds a fixed position relative to the leader, corrected by a PID. And a GS-RUFF law, based on attraction and repulsion potentials that set both the shape of the formation and the pull toward the trajectory. Validated in simulation then on real drones in an OptiTrack motion-capture arena.</p>
+      <p data-en="Project carried out during my internship at DGA. Control laws that keep several drones in formation along a trajectory. I developed and compared 2 guidance laws. A Leader-Follower, where each drone holds a fixed position relative to the leader, corrected by a PID. And a swarm guidance law, based on attraction and repulsion potentials that set both the shape of the formation and the pull toward the trajectory. Validated in simulation then on real drones in an OptiTrack motion-capture arena." data-fr="Projet mené pendant mon stage à la DGA. Des lois de commande qui maintiennent plusieurs drones en formation le long d'une trajectoire. J'ai développé et comparé 2 lois de guidage. Un Leader-Follower, où chaque drone garde une position fixe par rapport au leader, corrigée par un PID. Et une loi de guidage en essaim, à base de potentiels d'attraction et de répulsion qui donnent à la fois la forme de la formation et l'attraction vers la trajectoire. Validé en simulation puis sur drones réels dans une arène de capture de mouvement OptiTrack.">Project carried out during my internship at DGA. Control laws that keep several drones in formation along a trajectory. I developed and compared 2 guidance laws. A Leader-Follower, where each drone holds a fixed position relative to the leader, corrected by a PID. And a swarm guidance law, based on attraction and repulsion potentials that set both the shape of the formation and the pull toward the trajectory. Validated in simulation then on real drones in an OptiTrack motion-capture arena.</p>
       <div class="skills">
         <span class="lab" data-en="Skills" data-fr="Compétences">Skills</span>
         <div class="tags">
           <span data-en="Multi-agent control" data-fr="Commande multi-agents">Multi-agent control</span>
           <span data-en="Leader-Follower (PID)" data-fr="Leader-Follower (PID)">Leader-Follower (PID)</span>
-          <span data-en="Potential fields (GS-RUFF)" data-fr="Potentiels (GS-RUFF)">Potential fields (GS-RUFF)</span>
+          <span data-en="Swarm guidance" data-fr="Guidage en essaim">Swarm guidance</span>
           <span data-en="Real-time integration" data-fr="Intégration temps réel">Real-time integration</span>
           <span data-en="Motion capture (OptiTrack)" data-fr="Capture de mouvement (OptiTrack)">Motion capture (OptiTrack)</span>
         </div>
@@ -384,7 +384,7 @@
         <li>
           <span class="org">DGA — Direction Générale de l'Armement</span>
           <span class="role" data-en="Final-year engineering internship · 6 months · 2026 · Bruz, FR" data-fr="Stage de fin d'études ingénieur · 6 mois · 2026 · Bruz, FR">Final-year engineering internship · 6 months · 2026 · Bruz, FR</span>
-          <p data-en="Development and integration of guidance and control laws (ROS 2, PX4, Python) for vision-based autonomous interception (YOLO, EKF) and swarm flight." data-fr="Développement et intégration de lois de guidage et de commande (ROS 2, PX4, Python) pour l'interception autonome par vision (YOLO, EKF) et le vol en essaim.">Development and integration of guidance and control laws (ROS 2, PX4, Python) for vision-based autonomous interception (YOLO, EKF) and swarm flight.</p>
+          <p data-en="Development and integration of guidance and control laws (ROS 2, PX4, Python) for vision-based autonomous interception (AI, EKF) and swarm flight." data-fr="Développement et intégration de lois de guidage et de commande (ROS 2, PX4, Python) pour l'interception autonome par vision (IA, EKF) et le vol en essaim.">Development and integration of guidance and control laws (ROS 2, PX4, Python) for vision-based autonomous interception (AI, EKF) and swarm flight.</p>
         </li>
         <li>
           <span class="org">Neutron IT</span>
@@ -458,7 +458,7 @@
       </div>
       <div class="grp">
         <span class="k" data-en="SOFTWARE · ROBOTICS" data-fr="LOGICIEL · ROBOTIQUE">SOFTWARE · ROBOTICS</span>
-        <ul><li>Python · C++</li><li>ROS 2</li><li>Gazebo</li><li>YOLO · OptiTrack</li></ul>
+        <ul><li>Python · C++</li><li>ROS 2</li><li>Gazebo</li><li>Vision IA · OptiTrack</li></ul>
       </div>
     </div>
   </div>
