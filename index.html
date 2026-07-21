@@ -39,7 +39,6 @@
   .lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--muted);max-width:60ch}
   .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;
     text-transform:uppercase;color:var(--accent)}
-
   header.nav{position:sticky;top:0;z-index:50;
     background:color-mix(in srgb,var(--bg) 82%,transparent);
     backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -60,7 +59,6 @@
     display:flex;align-items:center;justify-content:center;transition:.2s}
   .iconbtn:hover{border-color:var(--faint)}
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-
   /* HERO with portrait */
   .hero{padding:clamp(54px,9vw,96px) 0 clamp(46px,6vw,72px)}
   .hero-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:clamp(28px,5vw,56px);align-items:center}
@@ -76,17 +74,14 @@
   .meta{display:flex;flex-wrap:wrap;gap:1.3rem;margin-top:1.8rem;
     font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.02em}
   .meta b{color:var(--text);font-weight:500}
-
   section{padding:clamp(56px,8vw,92px) 0;border-top:1px solid var(--line)}
   .sec-head{margin-bottom:clamp(34px,5vw,52px)}
   .sec-head h2{margin:.7rem 0 0}
-
   .caps{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,3vw,26px)}
   .cap-card{border:1px solid var(--line);border-radius:11px;padding:24px;background:var(--surface)}
   .cap-card .k{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:.06em}
   .cap-card h3{font-size:1.15rem;margin:.7rem 0 .5rem}
   .cap-card p{font-size:.95rem;color:var(--muted);margin:0}
-
   .proj{padding-block:clamp(42px,6vw,68px)}
   .proj+.proj{border-top:1px solid var(--line)}
   .proj-tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
@@ -95,14 +90,12 @@
   .proj p{color:var(--text);max-width:66ch}
   .stats{font-family:var(--mono);font-size:12.5px;color:var(--muted);
     letter-spacing:.01em;margin:1.3rem 0;line-height:2}
-
   .skills{margin:1.3rem 0}
   .skills .lab{font-family:var(--mono);font-size:11px;color:var(--faint);
     letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.6rem}
   .skills .tags{display:flex;flex-wrap:wrap;gap:.5rem}
   .skills .tags span{font-family:var(--mono);font-size:11.5px;color:var(--text);
     border:1px solid var(--line);border-radius:6px;padding:.32em .65em}
-
   .media{margin:1.4rem 0}
   .media img,.media video{width:100%;display:block;border:1px solid var(--line);
     border-radius:10px;background:var(--surface)}
@@ -110,7 +103,6 @@
     margin-top:.55rem;text-align:center}
   .slot-2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin:1.4rem 0}
   .slot-2 .media{margin:0}
-
   details.code{border:1px solid var(--line);border-radius:9px;background:var(--surface);
     overflow:hidden;margin:1.4rem 0}
   details.code summary{cursor:pointer;list-style:none;padding:13px 17px;
@@ -121,7 +113,6 @@
   details.code pre{margin:0;padding:0 17px 16px;overflow-x:auto}
   details.code code{font-family:var(--mono);font-size:12.5px;line-height:1.75;color:var(--text)}
   .cmt{color:var(--faint)} .kw{color:var(--accent)}
-
   .about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,5vw,56px)}
   .xp{list-style:none;margin:0;padding:0}
   .xp li{padding:18px 0;border-top:1px solid var(--line)}
@@ -134,24 +125,24 @@
   .facts dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.7rem 1.1rem;font-size:.93rem}
   .facts dt{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.03em}
   .facts dd{margin:0}
-
   .stack{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,32px)}
   .grp .k{font-family:var(--mono);font-size:11.5px;color:var(--accent);
     letter-spacing:.06em;display:block;margin-bottom:.9rem}
   .grp ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.5rem}
   .grp li{font-size:.94rem;color:var(--muted)}
-
-  footer{border-top:1px solid var(--line);padding:clamp(56px,8vw,88px) 0 48px;text-align:center}
-  footer h2{margin:1rem 0}
-  footer .lead{margin:0 auto 2rem}
-  .foot-meta{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:2.4rem}
-
-  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
-  .reveal.in{opacity:1;transform:none}
-
+  /* ==== Recommendations (added) ==== */
+  .recos{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,26px)}
+  .reco-card{display:flex;flex-direction:column;border:1px solid var(--line);
+    border-radius:11px;padding:24px;background:var(--surface);transition:.2s}
+  .reco-card:hover{border-color:var(--faint);transform:translateY(-2px)}
+  .reco-card .k{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:.06em}
+  .reco-card h3{font-size:1.15rem;margin:.7rem 0 .5rem}
+  .reco-card p{font-size:.95rem;color:var(--muted);margin:0 0 1.3rem}
+  .reco-card .btn{margin-top:auto;align-self:flex-start}
   @media(max-width:820px){
     .about-grid{grid-template-columns:1fr}
     .stack{grid-template-columns:1fr 1fr}
+    .recos{grid-template-columns:1fr}
     .slot-2{grid-template-columns:1fr}
     .nav-links{display:none}
   }
@@ -161,10 +152,11 @@
   }
   @media(max-width:500px){.caps,.stack{grid-template-columns:1fr}}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
 </style>
 </head>
 <body>
-
 <header class="nav">
   <div class="nav-in">
     <a class="brand" href="#top">G.<span>GUGUEN</span></a>
@@ -183,7 +175,6 @@
     </div>
   </div>
 </header>
-
 <a id="top"></a>
 <section class="hero" style="border-top:none">
   <div class="wrap">
@@ -198,6 +189,7 @@
           <a class="btn" href="https://www.linkedin.com/in/guillaume-guguen-8ab34021b/" target="_blank" rel="noopener">LinkedIn</a>
           <!-- 👉 Mets ton CV dans media/ sous le nom CV_Guillaume_Guguen.pdf -->
           <a class="btn" href="media/CV_Guillaume_Guguen.pdf" target="_blank" rel="noopener" data-en="CV (PDF)" data-fr="CV (PDF)">CV (PDF)</a>
+          <a class="btn" href="#recommendations" data-en="Recommendations" data-fr="Recommandations">Recommendations</a>
         </div>
         <div class="meta">
           <span data-en="GRADUATING <b>AUG 2026</b>" data-fr="DIPLÔMÉ <b>AOÛT 2026</b>">GRADUATING <b>AUG 2026</b></span>
@@ -210,7 +202,6 @@
     </div>
   </div>
 </section>
-
 <!-- ============ PROJECTS ============ -->
 <section id="projects">
   <div class="wrap">
@@ -218,7 +209,6 @@
       <span class="eyebrow" data-en="Selected work" data-fr="Travaux">Selected work</span>
       <h2 data-en="Projects" data-fr="Projets">Projects</h2>
     </div>
-
     <!-- Neutron IT -->
     <article class="proj reveal">
       <span class="proj-tag" data-en="Neutron IT · Startup contract" data-fr="Neutron IT · Contrat startup">Neutron IT · Startup contract</span>
@@ -256,7 +246,6 @@
         </figure>
       </div>
     </article>
-
     <!-- Interception -->
     <article class="proj reveal">
       <span class="proj-tag" data-en="DGA · Guidance, Navigation &amp; Control" data-fr="DGA · Guidage, Navigation &amp; Commande">DGA · Guidance, Navigation &amp; Control</span>
@@ -284,7 +273,6 @@
         </figure>
       </div>
     </article>
-
     <!-- Formation flight -->
     <article class="proj reveal">
       <span class="proj-tag" data-en="DGA · Multi-agent control" data-fr="DGA · Commande multi-agents">DGA · Multi-agent control</span>
@@ -311,7 +299,6 @@
         </figure>
       </div>
     </article>
-
     <!-- ================================================================
          PROJET INDUSTRIEL (cube haptique) — DESACTIVE TEMPORAIREMENT
          Pas encore autorise a communiquer dessus.
@@ -346,7 +333,6 @@
       </div>
     </article>
     -->
-
     <!-- EXAIL -->
     <article class="proj reveal">
       <span class="proj-tag" data-en="EXAIL · Industrial automation" data-fr="EXAIL · Automatisation industrielle">EXAIL · Industrial automation</span>
@@ -377,7 +363,6 @@
     </article>
   </div>
 </section>
-
 <!-- ============ BACKGROUND ============ -->
 <section id="about">
   <div class="wrap">
@@ -423,7 +408,38 @@
     </div>
   </div>
 </section>
-
+<!-- ============ RECOMMENDATIONS (added) ============ -->
+<section id="recommendations">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-en="References" data-fr="Recommandations">References</span>
+      <h2 data-en="Letters of recommendation" data-fr="Lettres de recommandation">Letters of recommendation</h2>
+    </div>
+    <div class="recos">
+      <!-- 👉 Mets le fichier dans media/ sous le nom Lettre_recommandation_DGA.pdf -->
+      <article class="reco-card reveal">
+        <span class="k">DGA</span>
+        <h3 data-en="Direction Générale de l'Armement" data-fr="Direction Générale de l'Armement">Direction Générale de l'Armement</h3>
+        <p data-en="Final-year engineering internship — guidance, navigation &amp; control." data-fr="Stage de fin d'études ingénieur — guidage, navigation &amp; commande.">Final-year engineering internship — guidance, navigation &amp; control.</p>
+        <a class="btn primary" href="media/Lettre_recommandation_DGA.pdf" target="_blank" rel="noopener" data-en="Read the letter (PDF)" data-fr="Lire la lettre (PDF)">Read the letter (PDF)</a>
+      </article>
+      <!-- 👉 Mets le fichier dans media/ sous le nom Lettre_recommandation_EXAIL.pdf -->
+      <article class="reco-card reveal">
+        <span class="k">EXAIL</span>
+        <h3 data-en="EXAIL" data-fr="EXAIL">EXAIL</h3>
+        <p data-en="Internship — mechanical design &amp; automation of a photo-inscription bench." data-fr="Stage — conception mécanique &amp; automatisation d'un banc de photo-inscription.">Internship — mechanical design &amp; automation of a photo-inscription bench.</p>
+        <a class="btn primary" href="media/Lettre_recommandation_EXAIL.pdf" target="_blank" rel="noopener" data-en="Read the letter (PDF)" data-fr="Lire la lettre (PDF)">Read the letter (PDF)</a>
+      </article>
+      <!-- 👉 Mets le fichier dans media/ sous le nom Lettre_recommandation_NeutronIT.pdf -->
+      <article class="reco-card reveal">
+        <span class="k">NEUTRON IT</span>
+        <h3 data-en="Neutron IT" data-fr="Neutron IT">Neutron IT</h3>
+        <p data-en="Startup contract — end-to-end mechatronic design of a custom UAV." data-fr="Contrat startup — conception mécatronique complète d'un drone sur mesure.">Startup contract — end-to-end mechatronic design of a custom UAV.</p>
+        <a class="btn primary" href="media/Lettre_recommandation_NeutronIT.pdf" target="_blank" rel="noopener" data-en="Read the letter (PDF)" data-fr="Lire la lettre (PDF)">Read the letter (PDF)</a>
+      </article>
+    </div>
+  </div>
+</section>
 <!-- ============ PROFILE (moved to the end) ============ -->
 <section id="profile">
   <div class="wrap">
@@ -453,7 +469,6 @@
         <p data-en="Programming, real-time middleware, physics simulation and computer vision for autonomous systems." data-fr="Programmation, middleware temps réel, simulation physique et vision par ordinateur pour systèmes autonomes.">Programming, real-time middleware, physics simulation and computer vision for autonomous systems.</p>
       </div>
     </div>
-
     <div class="stack reveal" style="margin-top:clamp(34px,5vw,52px)">
       <div class="grp">
         <span class="k" data-en="MECHANICAL · CAD" data-fr="MÉCANIQUE · CAO">MECHANICAL · CAD</span>
@@ -474,7 +489,6 @@
     </div>
   </div>
 </section>
-
 <!-- ============ FOOTER ============ -->
 <footer id="contact">
   <div class="wrap">
@@ -485,11 +499,11 @@
       <a class="btn" href="https://www.linkedin.com/in/guillaume-guguen-8ab34021b/" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn" href="https://guillaumeg22350.github.io/Robotics-Portfolio/" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="media/CV_Guillaume_Guguen.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      <a class="btn" href="#recommendations" data-en="Recommendations" data-fr="Recommandations">Recommendations</a>
     </div>
     <p class="foot-meta">Guillaume Guguen · <span data-en="Mechatronics Engineer" data-fr="Ingénieur Mécatronique">Mechatronics Engineer</span></p>
   </div>
 </footer>
-
 <script>
   function setLang(l){
     document.documentElement.setAttribute('lang', l);
