@@ -421,21 +421,21 @@
         <span class="k">DGA</span>
         <h3 data-en="Direction Générale de l'Armement" data-fr="Direction Générale de l'Armement">Direction Générale de l'Armement</h3>
         <p data-en="Final-year engineering internship — guidance, navigation &amp; control." data-fr="Stage de fin d'études ingénieur — guidage, navigation &amp; commande.">Final-year engineering internship — guidance, navigation &amp; control.</p>
-        <a class="btn primary" href="media/Lettre_recommandation_DGA.pdf" target="_blank" rel="noopener" data-en="Read the letter (PDF)" data-fr="Lire la lettre (PDF)">Read the letter (PDF)</a>
+        <a class="btn primary" href="media/Lettre_recommandation_DGA_EN.pdf" target="_blank" rel="noopener" data-href-en="media/Lettre_recommandation_DGA_EN.pdf" data-href-fr="media/Lettre_recommandation_DGA.pdf" data-en="Read the letter (PDF)" data-fr="Lire la lettre (PDF)">Read the letter (PDF)</a>
       </article>
       <!-- 👉 Mets le fichier dans media/ sous le nom Lettre_recommandation_EXAIL.pdf -->
       <article class="reco-card reveal">
         <span class="k">EXAIL</span>
         <h3 data-en="EXAIL" data-fr="EXAIL">EXAIL</h3>
         <p data-en="Internship — mechanical design &amp; automation of a photo-inscription bench." data-fr="Stage — conception mécanique &amp; automatisation d'un banc de photo-inscription.">Internship — mechanical design &amp; automation of a photo-inscription bench.</p>
-        <a class="btn primary" href="media/Lettre_recommandation_EXAIL.pdf" target="_blank" rel="noopener" data-en="Read the letter (PDF)" data-fr="Lire la lettre (PDF)">Read the letter (PDF)</a>
+        <a class="btn primary" href="media/Lettre_recommandation_EXAIL_EN.pdf" target="_blank" rel="noopener" data-href-en="media/Lettre_recommandation_EXAIL_EN.pdf" data-href-fr="media/Lettre_recommandation_EXAIL.pdf" data-en="Read the letter (PDF)" data-fr="Lire la lettre (PDF)">Read the letter (PDF)</a>
       </article>
       <!-- 👉 Mets le fichier dans media/ sous le nom Lettre_recommandation_NeutronIT.pdf -->
       <article class="reco-card reveal">
         <span class="k">NEUTRON IT</span>
         <h3 data-en="Neutron IT" data-fr="Neutron IT">Neutron IT</h3>
         <p data-en="Startup contract — end-to-end mechatronic design of a custom UAV." data-fr="Contrat startup — conception mécatronique complète d'un drone sur mesure.">Startup contract — end-to-end mechatronic design of a custom UAV.</p>
-        <a class="btn primary" href="media/Lettre_recommandation_NeutronIT.pdf" target="_blank" rel="noopener" data-en="Read the letter (PDF)" data-fr="Lire la lettre (PDF)">Read the letter (PDF)</a>
+        <a class="btn primary" href="media/Lettre_recommandation_NeutronIT_EN.pdf" target="_blank" rel="noopener" data-href-en="media/Lettre_recommandation_NeutronIT_EN.pdf" data-href-fr="media/Lettre_recommandation_NeutronIT.pdf" data-en="Read the letter (PDF)" data-fr="Lire la lettre (PDF)">Read the letter (PDF)</a>
       </article>
     </div>
   </div>
@@ -509,6 +509,9 @@
     document.documentElement.setAttribute('lang', l);
     document.querySelectorAll('[data-'+l+']').forEach(function(el){
       el.innerHTML = el.getAttribute('data-'+l);
+    });
+    document.querySelectorAll('[data-href-'+l+']').forEach(function(el){
+      el.setAttribute('href', el.getAttribute('data-href-'+l));
     });
     document.getElementById('langEN').setAttribute('aria-pressed', l==='en');
     document.getElementById('langFR').setAttribute('aria-pressed', l==='fr');
